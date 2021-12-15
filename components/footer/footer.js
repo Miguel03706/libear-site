@@ -9,12 +9,14 @@ function Footer() {
             <div className={styles.footer}>
                 <SimpleGrid columns={3} spacing={10}>
                     <GridItem w="100%" h="100px">
-                       <Center>
-                       <Image src="../icons/logo_urso.webp" alt="desenho de um urso polar sorrindo" />
-                       </Center>
+                        <Center>
+                            <Image src="../icons/logo_urso.webp" alt="desenho de um urso polar sorrindo" />
+                        </Center>
                     </GridItem>
                     <GridItem w={{ base: "150%", md: "100%", lg: "100%" }} h="100px" >
-                        <Text fontSize={{ base: "7px", md: "16px", lg: "18px" }} color="white" lineHeight="100px" textAlign="center">Contato@libear.com.br</Text>
+                        <Center>
+                            <Text fontSize={{ base: "7px", md: "16px", lg: "18px" }} color="white" lineHeight="100px" textAlign="center">Contato@libear.com.br</Text>
+                        </Center>
                     </GridItem>
                     <GridItem w="100%" h="100px">
                         <Container centerContent h="100px" >
