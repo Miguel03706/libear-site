@@ -27,9 +27,9 @@ export default function Home() {
         <Center>
           <Heading as='h1' fontFamily="arial" marginTop="50px"> Libear </Heading>
         </Center>
-        <SimpleGrid columns={2} spacing={10} spacingY="100px" minChildWidth='100%'>
+        <SimpleGrid columns={2} spacing={10} spacingY="100px" minChildWidth='768px'>
           <GridItem w="100%" h="auto">
-            <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" />
+            <Center> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
           </GridItem>
           <GridItem w="100%" h="auto">
             <Center h="100px"><p>Ensino de qualidade</p></Center>
@@ -40,7 +40,7 @@ export default function Home() {
             </Text>
           </GridItem>
           <GridItem w="100%" h="auto">
-            <Image src="images/moeda.webp" alt="foto do planeta Terra" />
+            <Center> <Image src="images/moeda.webp" alt="foto de uma moeda" /> </Center>
           </GridItem>
           <GridItem w="100%" h="auto">
             <Center h="100px"><p>Libear premium</p></Center>
