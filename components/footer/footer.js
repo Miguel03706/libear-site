@@ -8,7 +8,7 @@ function Footer() {
         <>
             <div className={styles.footer}>
                 <SimpleGrid columns={3} spacing={10}>
-                    <GridItem w="100%" h="100px">
+                    <GridItem w="100%" h="100px" marginLeft="20px">
                         <Image src="../icons/logo_urso.webp" alt="desenho de um urso polar sorrindo" />
                     </GridItem>
                     <GridItem w={{ base: "150%", md: "100%", lg: "100%" }} h="100px" >
