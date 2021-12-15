@@ -1,4 +1,4 @@
-import { Image, SimpleGrid, GridItem, Text, Box, Container, IconButton, Link } from "@chakra-ui/react"
+import { Image, SimpleGrid, GridItem, Text, Box, Container, IconButton, Link, Center } from "@chakra-ui/react"
 import { FaInstagram } from 'react-icons/fa'
 import styles from "./footer.module.scss"
 
@@ -8,8 +8,10 @@ function Footer() {
         <>
             <div className={styles.footer}>
                 <SimpleGrid columns={3} spacing={10}>
-                    <GridItem w="100%" h="100px" marginLeft="20px">
-                        <Image src="../icons/logo_urso.webp" alt="desenho de um urso polar sorrindo" />
+                    <GridItem w="100%" h="100px">
+                       <Center>
+                       <Image src="../icons/logo_urso.webp" alt="desenho de um urso polar sorrindo" />
+                       </Center>
                     </GridItem>
                     <GridItem w={{ base: "150%", md: "100%", lg: "100%" }} h="100px" >
                         <Text fontSize={{ base: "7px", md: "16px", lg: "18px" }} color="white" lineHeight="100px" textAlign="center">Contato@libear.com.br</Text>
