@@ -5,8 +5,6 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AuthProvider>
-      
       <ChakraProvider>
         <ColorModeScript initialColorMode="light" />
       
@@ -15,7 +13,6 @@ function MyApp({ Component, pageProps }) {
   
         <Footer />
       </ChakraProvider>
-    </AuthProvider>
   )
 }
 
