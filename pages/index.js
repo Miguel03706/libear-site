@@ -27,7 +27,7 @@ export default function Home() {
         <Center>
           <Heading as='h1' fontFamily="arial" marginTop="50px"> Libear </Heading>
         </Center>
-        <SimpleGrid columns={2} spacing={10} spacingY="100px" maxChildWidth='768px'>
+        <SimpleGrid columns={2} spacing={10} spacingY="100px" minChildWidth='768px'>
           <GridItem w="100%" h="auto">
             <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" />
           </GridItem>
