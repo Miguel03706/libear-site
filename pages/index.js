@@ -12,7 +12,6 @@ export default function Home() {
           <span>
             <Text fontSize={{ base: "12px", md: "18px", lg: "25px" }} color='white' >Aprenda libras da melhor maneira!</Text>
           </span>
-
           <Link href="/cadastrar">
             <Button colorScheme="blue" className={styles.btn_start} color='white'>Começar</Button>
           </Link>
