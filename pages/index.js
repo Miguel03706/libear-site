@@ -27,8 +27,8 @@ export default function Home() {
         <Center>
           <Heading as='h1' fontFamily="arial" marginTop="50px"> Libear </Heading>
         </Center>
-        <SimpleGrid autoColumns spacing={10} spacingY="50px" className={styles.teste}>
-          <GridItem w="50%" h="auto">
+        <SimpleGrid spacing={10} spacingY="50px" className={styles.teste}>
+          <GridItem autoColumns w="50%" h="auto">
             <Center> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
             <Center h="100px"><p>Ensino de qualidade</p></Center>
             <Text letterSpacing="2px" textAlign="center">
