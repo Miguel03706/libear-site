@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link"
-import { Image, Button, Heading, Text, Center, GridItem, SimpleGrid } from "@chakra-ui/react";
+import { Image, Button, Heading, Text, Center, GridItem, SimpleGrid, Box } from "@chakra-ui/react";
 import styles from "../styles/Home.module.scss"
 
 export default function Home() {
@@ -28,18 +28,18 @@ export default function Home() {
           <Heading as='h1' fontFamily="arial" marginTop="50px"> Libear </Heading>
         </Center>
 
-        <SimpleGrid columns={2} spacing={10} spacingY="80px" className={styles.teste}>
-          <GridItem w="100%" h="auto" >
+        <SimpleGrid minChildWidth='1000px' spacing={10} spacingY="80px" className={styles.teste}>
+          <Box w="100%" h="auto" >
             <Center> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
-          </GridItem>
-          <GridItem w="100%" h="auto">
+          </Box>
+          <Box w="100%" h="auto">
             <Center h="100px"><p>Ensino de qualidade</p></Center>
             <Text letterSpacing="2px" textAlign="center">
               O jeito mais inovador de aprender idiomas! Aprender com o Libear é divertido e viciante.
               Ganhe pontos ao acertar, corra contra o tempo e passe de nível. As nossas aulas são rápidas
               e eficazes.
             </Text>
-          </GridItem>
+          </Box>
           <GridItem w="100%" h="auto">
             <Center> <Image src="images/moeda.webp" alt="foto de uma moeda" /> </Center>
           </GridItem>
