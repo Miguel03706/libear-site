@@ -31,6 +31,8 @@ export default function Home() {
         <SimpleGrid columns={2} spacing={10} spacingY="80px" className={styles.teste}>
           <GridItem w="100%" h="auto" >
             <Center> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
+          </GridItem>
+          <GridItem w="100%" h="auto">
             <Center h="100px"><p>Ensino de qualidade</p></Center>
             <Text letterSpacing="2px" textAlign="center">
               O jeito mais inovador de aprender idiomas! Aprender com o Libear é divertido e viciante.
