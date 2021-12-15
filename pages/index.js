@@ -13,7 +13,7 @@ export default function Home() {
             <Text fontSize={{ base: "12px", md: "18px", lg: "25px" }} color='white' >Aprenda libras da melhor maneira!</Text>
           </span>
           <Link href="/cadastrar">
-            <Button colorScheme="blue" className={styles.btn_start} color='white'>Começar</Button>
+            <Button colorScheme="blue" className={styles.btn_start}>Começar</Button>
           </Link>
           <Link href="/entrar">
             <Button colorScheme="blue" className={styles.btn_login}>
