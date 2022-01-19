@@ -30,7 +30,7 @@ export default function Home() {
         </Center>
 
         <Container fluid>
-          <Row bg="blue">
+          <Row variant="success">
             <Col bg="black">1 of 1</Col>
           </Row>
         </Container>
