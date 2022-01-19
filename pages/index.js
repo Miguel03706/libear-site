@@ -29,11 +29,11 @@ export default function Home() {
           <Heading as='h1' fontFamily="arial" marginTop="30px"> Libear </Heading>
         </Center>
 
-        <Container fluid>
-          <Row variant="success">
-            <Col bg="black">1 of 1</Col>
-          </Row>
-        </Container>
+        <div className="container-fluid">
+          <div className="row-md-12">
+            <div className="col-md-3">aaa</div>
+          </div>
+        </div>
         {/*         
         <SimpleGrid columns={2} spacing={10} marginTop="30px" minChildWidth="sm">
           <GridItem w="100%" h="auto">
