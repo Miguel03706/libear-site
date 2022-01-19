@@ -30,11 +30,11 @@ export default function Home() {
         </Center>
 
         <Container>
-          <Row className="justify-content-md-center">
-            <Col>
+          <Row className="justify-content-md-center" md={2}>
+            <Col md={1}>
             <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" />
             </Col>
-            <Col>
+            <Col md={1}>
               <p>Ensino de qualidade</p>
               <Text letterSpacing="2px" textAlign="center">
                 O jeito mais inovador de aprender idiomas! Aprender com o Libear é divertido e viciante.
