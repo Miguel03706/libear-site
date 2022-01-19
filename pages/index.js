@@ -32,6 +32,10 @@ export default function Home() {
         <div className="container-fluid">
           <div className="row-md-12">
             <div className="col-md-3">aaa</div>
+            <div className="col-md-3">bbb</div>
+            <div className="col-md-3">ccc</div>
+            <div className="col-md-3">ddd</div>
+
           </div>
         </div>
         {/*         
