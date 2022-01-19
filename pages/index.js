@@ -33,9 +33,12 @@ export default function Home() {
           <div className="row row-cols-2">
             <div className="col">aaa</div>
             <div className="col">bbb</div>
-
           </div>
         </div>
+        {
+        //tirar o bootstrap 
+        //tirar o ReactBootstrap  
+        }
         {/*         
         <SimpleGrid columns={2} spacing={10} marginTop="30px" minChildWidth="sm">
           <GridItem w="100%" h="auto">
