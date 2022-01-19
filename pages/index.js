@@ -29,19 +29,9 @@ export default function Home() {
           <Heading as='h1' fontFamily="arial" marginTop="30px"> Libear </Heading>
         </Center>
 
-        <Container>
-          <Row className="justify-content-md-center" md={2}>
-            <Col md={1} bg="dark">
-            <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" />
-            </Col>
-            <Col md={1} bg="blue">
-              <p>Ensino de qualidade</p>
-              <Text letterSpacing="2px" textAlign="center">
-                O jeito mais inovador de aprender idiomas! Aprender com o Libear é divertido e viciante.
-                Ganhe pontos ao acertar, corra contra o tempo e passe de nível. As nossas aulas são rápidas
-                e eficazes.
-              </Text>
-            </Col>
+        <Container fluid>
+          <Row>
+            <Col>1 of 1</Col>
           </Row>
         </Container>
         {/*         
