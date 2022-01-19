@@ -29,12 +29,10 @@ export default function Home() {
           <Heading as='h1' fontFamily="arial" marginTop="30px"> Libear </Heading>
         </Center>
 
-        <div className="container-fluid">
-          <div className="row-md-12">
-            <div className="col-md-3">aaa</div>
-            <div className="col-md-3">bbb</div>
-            <div className="col-md-3">ccc</div>
-            <div className="col-md-3">ddd</div>
+        <div className="container">
+          <div className="row row-cols-2">
+            <div className="col">aaa</div>
+            <div className="col">bbb</div>
 
           </div>
         </div>
