@@ -27,6 +27,18 @@ export default function Home() {
         <Center>
           <Heading as='h1' fontFamily="arial" marginTop="30px"> Libear </Heading>
         </Center>
+
+        <Container>
+          <Row className="justify-content-md-center">
+            <Col xs lg="2">
+              teste
+            </Col>
+            <Col md="auto">
+              imagem
+            </Col>
+          </Row>
+        </Container>
+{/*         
         <SimpleGrid columns={2} spacing={10} marginTop="30px" minChildWidth="sm">
           <GridItem w="100%" h="auto">
             <Center> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
@@ -50,7 +62,7 @@ export default function Home() {
               os anúncios e apoiar a educação gratuita com o premium.
             </Text>
           </GridItem>
-        </SimpleGrid>
+        </SimpleGrid> */}
       </div>
     </>
   )
