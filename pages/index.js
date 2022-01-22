@@ -44,18 +44,16 @@ export default function Home() {
           <div className={styles.imagem1}>
             <Center> <Image src="images/moeda.webp" alt="foto de uma moeda" /> </Center>
           </div>
+          <Center>
           <div className={styles.texto1}>
-            <Center>
-
-              <Text textAlign="center" fontWeight={600} as='h2' marginTop="30px">Libear Premium</Text>
-              <Text letterSpacing="2px" textAlign="center">
-                Melhore o seu aprendizado com o Libear premium
-                Aprender um idioma no Libear é totalmente gratuito, mas você pode remover
-                os anúncios e apoiar a educação gratuita com o premium.
-              </Text>
-
-            </Center>
+            <Text textAlign="center" fontWeight={600} as='h2' marginTop="30px">Libear Premium</Text>
+            <Text letterSpacing="2px" textAlign="center">
+              Melhore o seu aprendizado com o Libear premium
+              Aprender um idioma no Libear é totalmente gratuito, mas você pode remover
+              os anúncios e apoiar a educação gratuita com o premium.
+            </Text>
           </div>
+          </Center>
         </div>
         {
           //tirar o bootstrap 
