@@ -72,6 +72,7 @@
   .container_text {
     display: grid;
     grid-template-columns: 2fr 2fr;
+    grid-template-rows: 20vh 70vh 10vh;
     gap: 100px 0px;
     .first_row {
       background-color: #000;
