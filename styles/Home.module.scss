@@ -74,21 +74,13 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 30px 100px;
-    // grid-template-areas: "i t"
-    //                      "I T";
     .imagem1 {
       text-align: center;
-      text-justify: center;
-      // width: 100%;
-      // height: 20px;
-      // grid-area: "i";
+      justify-content: center;
     }
     .texto1 {
       text-align: center;
-      text-justify: center;
-      // width: 100%;
-      // height: 20px;
-      // grid-area: "t";
+      justify-content: center;
     }
   }
 }
@@ -118,13 +110,11 @@
     .container_text {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
-      gap: 50px 0px;
+      gap: 20px 0px;
       .imagem1 {
-        background-color: blue !important; 
         text-align: center;
       }
       .texto1 {
-        background-color: pink !important;
         text-align: center;
       }
     }
