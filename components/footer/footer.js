@@ -15,7 +15,7 @@ function Footer() {
                     </GridItem>
                     <GridItem w="100%" h="100px" >
                         <Center>
-                            <Text fontSize={{ base: "10px", md: "16px", lg: "18px" }} color="white" lineHeight="100px" textAlign="center">
+                            <Text fontSize={{ base: "12px", md: "16px", lg: "18px" }} color="white" lineHeight="100px" textAlign="center">
                                 Contato@libear.com.br
                             </Text>
                         </Center>
