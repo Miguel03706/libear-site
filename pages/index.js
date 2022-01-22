@@ -29,7 +29,7 @@ export default function Home() {
           <Heading as='h1' fontFamily="arial" marginTop="30px"> Libear </Heading>
         </Center>
 
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
             <aside class="col-md-4 text-center">Trabalho realizado na Etec de Itaquaquecetuba</aside>
             <aside class="col-md-4 text-center">
