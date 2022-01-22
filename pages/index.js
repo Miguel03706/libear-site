@@ -30,14 +30,16 @@ export default function Home() {
         </Center>
 
         <div className="container">
-          <div className="row row-cols-2">
-            <div className="col">aaa</div>
-            <div className="col">bbb</div>
+          <div className="row">
+            <aside class="col-md-4 text-center">Trabalho realizado na Etec de Itaquaquecetuba</aside>
+            <aside class="col-md-4 text-center">
+              <p>&copy; Matheus | Miguel | Natália | Niely | Ryan | Vinicius</p>
+            </aside>
           </div>
         </div>
         {
-        //tirar o bootstrap 
-        //tirar o ReactBootstrap  
+          //tirar o bootstrap 
+          //tirar o ReactBootstrap  
         }
         {/*         
         <SimpleGrid columns={2} spacing={10} marginTop="30px" minChildWidth="sm">
