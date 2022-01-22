@@ -107,6 +107,10 @@
     }
   }
   .container {
+    img {
+      width: 150px;
+      height: 150px;
+    }
     .container_text {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;

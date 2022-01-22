@@ -33,26 +33,28 @@ export default function Home() {
           <div className={styles.imagem1}>
             <Center marginTop="30px"> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
           </div>
-          <div className={styles.texto1}>
-            <Text textAlign="center" fontWeight={600} as='h2' marginTop="30px">Ensino de qualidade</Text>
-            <Text letterSpacing="2px" textAlign="center">
-              O jeito mais inovador de aprender idiomas! Aprender com o Libear é divertido e viciante.
-              Ganhe pontos ao acertar, corra contra o tempo e passe de nível. As nossas aulas são rápidas
-              e eficazes.
-            </Text>
-          </div>
+          <Center>
+            <div className={styles.texto1}>
+              <Text textAlign="center" fontWeight={600} as='h2' marginTop="30px">Ensino de qualidade</Text>
+              <Text letterSpacing="2px" textAlign="center">
+                O jeito mais inovador de aprender idiomas! Aprender com o Libear é divertido e viciante.
+                Ganhe pontos ao acertar, corra contra o tempo e passe de nível. As nossas aulas são rápidas
+                e eficazes.
+              </Text>
+            </div>
+          </Center>
           <div className={styles.imagem1}>
             <Center> <Image src="images/moeda.webp" alt="foto de uma moeda" /> </Center>
           </div>
           <Center>
-          <div className={styles.texto1}>
-            <Text textAlign="center" fontWeight={600} as='h2' marginTop="30px">Libear Premium</Text>
-            <Text letterSpacing="2px" textAlign="center">
-              Melhore o seu aprendizado com o Libear premium
-              Aprender um idioma no Libear é totalmente gratuito, mas você pode remover
-              os anúncios e apoiar a educação gratuita com o premium.
-            </Text>
-          </div>
+            <div className={styles.texto1}>
+              <Text textAlign="center" fontWeight={600} as='h2' marginTop="30px">Libear Premium</Text>
+              <Text letterSpacing="2px" textAlign="center">
+                Melhore o seu aprendizado com o Libear premium
+                Aprender um idioma no Libear é totalmente gratuito, mas você pode remover
+                os anúncios e apoiar a educação gratuita com o premium.
+              </Text>
+            </div>
           </Center>
         </div>
         {
