@@ -36,6 +36,12 @@ export default function Home() {
             <div className={styles.texto1}>
               texto
             </div>
+            <div className={styles.imagem1}>
+              imagem
+            </div>
+            <div className={styles.texto1}>
+              texto
+            </div>
         </div>
         {
           //tirar o bootstrap 
