@@ -31,10 +31,10 @@ export default function Home() {
 
         <div className={styles.container_text}>
           <div className={styles.imagem1}>
-            <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" />
+            <Center> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
           </div>
           <div className={styles.texto1}>
-            <p>Ensino de qualidade</p>
+            <Text textAlign="center" fontWeight='400'>Ensino de qualidade</Text>
             <Text letterSpacing="2px" textAlign="center">
               O jeito mais inovador de aprender idiomas! Aprender com o Libear é divertido e viciante.
               Ganhe pontos ao acertar, corra contra o tempo e passe de nível. As nossas aulas são rápidas
