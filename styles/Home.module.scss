@@ -68,6 +68,22 @@
     width: 300px;
     height: 300px;
   }
+
+  .container_text {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-row-gap: 100px;
+    .first_row {
+      background-color: #000;
+      width: 100%;
+      height: 20px;
+    }
+    .second_row {
+      background-color: #000;
+      width: 100%;
+      height: 20px;
+    }
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -83,7 +99,6 @@
       top: 10px;
       text-align: center;
       color: #000;
-
     }
     .btn_login {
       width: 90%;
@@ -92,5 +107,4 @@
       color: #000;
     }
   }
-
 }

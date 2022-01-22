@@ -29,12 +29,12 @@ export default function Home() {
           <Heading as='h1' fontFamily="arial" marginTop="30px"> Libear </Heading>
         </Center>
 
-        <div className="container-fluid">
-          <div className="row">
-            <aside class="col-md-4 text-center">Trabalho realizado na Etec de Itaquaquecetuba</aside>
-            <aside class="col-md-4 text-center">
-              <p>&copy; Matheus | Miguel | Natália | Niely | Ryan | Vinicius</p>
-            </aside>
+        <div className={styles.container_text}>
+          <div className={styles.first_row}>
+
+          </div>
+          <div className={styles.second_row}>
+
           </div>
         </div>
         {
