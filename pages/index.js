@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link"
 import { Image, Button, Heading, Text, Center, GridItem, SimpleGrid } from "@chakra-ui/react";
-import { Container, Col, Row } from 'react-bootstrap';
 import styles from "../styles/Home.module.scss"
 
 export default function Home() {
