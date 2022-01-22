@@ -72,7 +72,7 @@
   .container_text {
     display: grid;
     grid-template-columns: 2fr 2fr;
-    row-gap: 100px;
+    gap: 100px 0px;
     .first_row {
       background-color: #000;
       width: 100%;
