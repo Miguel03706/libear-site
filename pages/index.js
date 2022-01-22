@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link"
-import { Image, Button, Heading, Text, Center, GridItem, SimpleGrid } from "@chakra-ui/react";
+import { Image, Button, Heading, Text, Center } from "@chakra-ui/react";
 import styles from "../styles/Home.module.scss"
 
 export default function Home() {
@@ -27,7 +27,6 @@ export default function Home() {
         <Center>
           <Heading as='h1' fontFamily="arial" marginTop="30px"> Libear </Heading>
         </Center>
-
         <div className={styles.container_text}>
           <div className={styles.imagem1}>
             <Center marginTop="30px"> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
@@ -56,10 +55,6 @@ export default function Home() {
             </div>
           </Center>
         </div>
-        {
-          //tirar o bootstrap 
-          //tirar o ReactBootstrap  
-        }
       </div>
     </>
   )
