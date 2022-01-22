@@ -30,12 +30,12 @@ export default function Home() {
         </Center>
 
         <div className={styles.container_text}>
-          <div className={styles.first_row}>
-
-          </div>
-          <div className={styles.second_row}>
-
-          </div>
+            <div className={styles.imagem1}>
+              imagem
+            </div>
+            <div className={styles.texto1}>
+              texto
+            </div>
         </div>
         {
           //tirar o bootstrap 

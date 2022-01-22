@@ -73,16 +73,19 @@
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-template-rows: 20vh 70vh 10vh;
-    gap: 100px 0px;
-    .first_row {
+    grid-template-areas: "i t"
+                         "I T";
+    .imagem1 {
       background-color: #000;
       width: 100%;
       height: 20px;
+      grid-area: "i";
     }
-    .second_row {
-      background-color: #000;
+    .texto1 {
+      background-color: #63c2d1;
       width: 100%;
       height: 20px;
+      grid-area: "t";
     }
   }
 }
