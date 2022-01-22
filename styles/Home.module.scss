@@ -114,19 +114,19 @@
       color: #000;
     }
   }
-
-  .container_text {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0px 30px;
-    .imagem1 {
-      background-color: blue;
-      text-align: center;
-    }
-    .texto1 {
-      background-color: pink;
-      text-align: center;
+  .container {
+    .container_text {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      gap: 0px 30px;
+      .imagem1 {
+        background-color: blue !important; 
+        text-align: center;
+      }
+      .texto1 {
+        background-color: pink !important;
+        text-align: center;
+      }
     }
   }
-
 }
