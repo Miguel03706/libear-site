@@ -114,6 +114,7 @@
 
   .container_text {
     grid-template-columns: 1fr;
+    grid-template-rows: 4fr;
     grid-template-areas: "i"
                          "t"
                          "I"
