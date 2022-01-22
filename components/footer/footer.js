@@ -13,9 +13,11 @@ function Footer() {
                             <Image src="../icons/logo_urso.webp" alt="desenho de um urso polar sorrindo" />
                         </Center>
                     </GridItem>
-                    <GridItem w={{ base: "150%", md: "100%", lg: "100%" }} h="100px" >
+                    <GridItem w="100%" h="100px" >
                         <Center>
-                            <Text fontSize={{ base: "7px", md: "16px", lg: "18px" }} color="white" lineHeight="100px" textAlign="center">Contato@libear.com.br</Text>
+                            <Text fontSize={{ base: "10px", md: "16px", lg: "18px" }} color="white" lineHeight="100px" textAlign="center">
+                                Contato@libear.com.br
+                            </Text>
                         </Center>
                     </GridItem>
                     <GridItem w="100%" h="100px">

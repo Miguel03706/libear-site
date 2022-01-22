@@ -61,31 +61,6 @@ export default function Home() {
           //tirar o bootstrap 
           //tirar o ReactBootstrap  
         }
-        {/*         
-        <SimpleGrid columns={2} spacing={10} marginTop="30px" minChildWidth="sm">
-          <GridItem w="100%" h="auto">
-            <Center> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
-          </GridItem>
-          <GridItem w="100%" h="auto">
-            <Center h="100px"><p>Ensino de qualidade</p></Center>
-            <Text letterSpacing="2px" textAlign="center">
-              O jeito mais inovador de aprender idiomas! Aprender com o Libear é divertido e viciante.
-              Ganhe pontos ao acertar, corra contra o tempo e passe de nível. As nossas aulas são rápidas
-              e eficazes.
-            </Text>
-          </GridItem>
-          <GridItem w="100%" h="auto">
-            <Center> <Image src="images/moeda.webp" alt="foto de uma moeda" /> </Center>
-          </GridItem>
-          <GridItem w="100%" h="auto">
-            <Center h="100px"><p>Libear premium</p></Center>
-            <Text letterSpacing="2px" textAlign="center">
-              Melhore o seu aprendizado com o Libear premium
-              Aprender um idioma no Libear é totalmente gratuito, mas você pode remover
-              os anúncios e apoiar a educação gratuita com o premium.
-            </Text>
-          </GridItem>
-        </SimpleGrid> */}
       </div>
     </>
   )
