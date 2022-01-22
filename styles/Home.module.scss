@@ -111,4 +111,16 @@
       color: #000;
     }
   }
+
+  .container_text {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "i"
+                         "t"
+                         "I"
+                         "T";
+  }
+
+
 }
