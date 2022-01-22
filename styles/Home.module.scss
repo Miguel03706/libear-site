@@ -73,6 +73,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 30px 100px;
     // grid-template-areas: "i t"
     //                      "I T";
     .imagem1 {
@@ -111,6 +112,20 @@
       height: 55px;
       top: 20px;
       color: #000;
+    }
+  }
+
+  .container_text {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 30px;
+    .imagem1 {
+      background-color: blue;
+      text-align: center;
+    }
+    .texto1 {
+      background-color: pink;
+      text-align: center;
     }
   }
 
