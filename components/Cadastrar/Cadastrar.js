@@ -3,6 +3,7 @@ import { Center, Image, Button, Input } from "@chakra-ui/react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import API from "../../pages/api/firebase";
 import styles from "./Cadastrar.module.scss";
 
 export default function Cadastrar() {
@@ -26,12 +27,11 @@ export default function Cadastrar() {
         validateOnBlur: false
     })
 
-    function cadastrarDados() {
+    async function cadastrarDados() {
         setLoading(true);
         let { email, password } = formik.values;
+        API.criarContaFB(email, password);
         console.log("email: " + email + " Senha: " + password);
-        console.log(process.env.REACT_APP_FIREBASE_KEY);
-        console.log(process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_AUTHDOMAIN);
         setLoading(false);
     }
 
@@ -81,5 +81,5 @@ export default function Cadastrar() {
 }
 
 export async function getServersideProps(){
-    
+
 }
