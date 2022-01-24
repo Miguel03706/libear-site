@@ -15,6 +15,7 @@ export default function Cadastrar() {
                         variant="flushed"
                         type="email"
                         placeholder="Digite seu email"
+                        textAlign="center"
                     />
                 </Center>
             </form>
