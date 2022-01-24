@@ -7,6 +7,8 @@ import styles from "./Cadastrar.module.scss";
 
 export default function Cadastrar() {
 
+    const [loading, setLoading] = useState(false);
+
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -14,19 +16,22 @@ export default function Cadastrar() {
         },
         validationSchema: yup.object({
             email: yup.string()
-                      .required("Você precisa digitar um email")
-                      .email("Preencha com um email válido"),
+                .required("Você precisa digitar um email")
+                .email("Preencha com um email válido"),
             password: yup.string()
-                         .required("você precisa digitar uma senha")
-                         .min(6, "A senha deve conter no mínimo 6 caracteres")
+                .required("você precisa digitar uma senha")
+                .min(6, "A senha deve conter no mínimo 6 caracteres")
         }),
         validateOnChange: false,
         validateOnBlur: false
     })
 
-    function cadastrarDados(){
+    function cadastrarDados() {
+        setLoading(true);
         let { email, password } = formik.values;
         console.log("email: " + email + " Senha: " + password);
+        setLoading(false);
+
     }
 
     return (
