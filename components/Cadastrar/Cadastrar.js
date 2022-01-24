@@ -28,11 +28,11 @@ export default function Cadastrar() {
                     />
                 </Center>
 
-                <Center marginTop="30px">
+                <Center marginTop="20px">
                     <Button colorScheme="teal">Cadastrar</Button>
                 </Center>
 
-                <Center>
+                <Center marginTop="20px">
                     <div className={styles.Link} >
                         Já possui uma conta?<Link href="/entrar"><a> Entrar</a></Link>
                     </div>
