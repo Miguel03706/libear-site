@@ -17,19 +17,19 @@ if (!firebase.apps.length) {
     });
 }
 
-export async function criarContaFB (email, senha){
-        let sucesso = await firebase.auth().createUserWithEmailAndPassword(email, senha).then(() => {
-        //   const user = firebase.auth().currentUser;
+// export async function criarContaFB (email, senha){
+//         let sucesso = await firebase.auth().createUserWithEmailAndPassword(email, senha).then(() => {
+//         //   const user = firebase.auth().currentUser;
     
-        //   user.updateProfile({
-        //     displayName: "User",
-        //     photoURL: "polar"
-        //   })
-        }).then(() => {
-          console.log(sucesso + "Deu certo")
-        }).catch((error) => {
-        //   handleError(error);
-        })
-      }
+//         //   user.updateProfile({
+//         //     displayName: "User",
+//         //     photoURL: "polar"
+//         //   })
+//         }).then(() => {
+//           console.log(sucesso + "Deu certo")
+//         }).catch((error) => {
+//         //   handleError(error);
+//         })
+//       }
 
 
