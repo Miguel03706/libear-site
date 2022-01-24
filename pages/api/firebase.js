@@ -17,8 +17,7 @@ if (!firebase.apps.length) {
     });
 }
 
-export default {
-    criarContaFB: async (email, senha) => {
+export async function criarContaFB (email, senha){
         let sucesso = await firebase.auth().createUserWithEmailAndPassword(email, senha).then(() => {
         //   const user = firebase.auth().currentUser;
     
@@ -31,7 +30,6 @@ export default {
         }).catch((error) => {
         //   handleError(error);
         })
-      },
-};
+      }
 
 
