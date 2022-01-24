@@ -1,6 +1,8 @@
-import React from "react"
+import React from "react";
 import { Center, Image, Button, Input } from "@chakra-ui/react";
 import Link from "next/link";
+import { useFormik } from "formik";
+import * as yup from "yup";
 import styles from "./Cadastrar.module.scss";
 
 export default function Cadastrar() {
