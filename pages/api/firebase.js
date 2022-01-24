@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 // export default function handler(req, res) {
 //   res.status(200).json({ name: 'John Doe' })
@@ -22,8 +22,10 @@ const firebaseConfig = {
 
 // export default firebase;
 export default {
+    
     criarContaFB: async (email, senha) => {
-        await createUserWithEmailAndPassword(email, senha).then(() => {
+        const auth = getAuth();
+        await createUserWithEmailAndPassword(auth, email, senha).then(() => {
            const user = firebase.auth().currentUser
                  //   user.updateProfile({
                  //     displayName: "User",
