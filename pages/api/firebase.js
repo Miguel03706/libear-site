@@ -1,5 +1,7 @@
 import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
+import "firebase/firebase-auth";
+import "firebase/firebase-firestore";
 import "firebase/auth";
 
 // export default function handler(req, res) {
@@ -18,7 +20,7 @@ const firebaseConfig = {
   };
   
   // Initialize Firebase
-  const firebase = initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
 
 // export default firebase;
 export default {
