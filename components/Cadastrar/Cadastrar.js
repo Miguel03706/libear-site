@@ -3,7 +3,7 @@ import { Center, Image, Button, Input } from "@chakra-ui/react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { criarContaFB } from "../../pages/api/firebase.js";
+//import { criarContaFB } from "../../pages/api/firebase.js";
 import styles from "./Cadastrar.module.scss";
 
 export default function Cadastrar() {
@@ -30,7 +30,7 @@ export default function Cadastrar() {
     async function cadastrarDados() {
         setLoading(true);
         let { email, password } = formik.values;
-        criarContaFB(email, password);
+        //criarContaFB(email, password);
         console.log("email: " + email + " Senha: " + password);
         setLoading(false);
     }
