@@ -59,7 +59,12 @@ export default function Cadastrar() {
                 </Center>
 
                 <Center marginTop="20px">
-                    <Button colorScheme="teal" onClick={cadastrarDados} disabled={loading ? true : false }>Cadastrar</Button>
+                    <Button
+                        colorScheme="teal"
+                        onClick={cadastrarDados}
+                        disabled={loading ? true : false}>
+                        Cadastrar
+                    </Button>
                 </Center>
 
                 <Center marginTop="20px">
