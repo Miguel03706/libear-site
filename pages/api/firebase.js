@@ -1,7 +1,6 @@
 import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
 import "firebase/auth";
-import "firebase/firebase-firestore";
 
 // export default function handler(req, res) {
 //   res.status(200).json({ name: 'John Doe' })
