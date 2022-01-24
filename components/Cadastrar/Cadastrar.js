@@ -3,7 +3,7 @@ import { Center, Image, Button, Input } from "@chakra-ui/react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import API from "../../pages/api/firebase";
+import API from "../../pages/api/firebase.js";
 import styles from "./Cadastrar.module.scss";
 
 export default function Cadastrar() {
