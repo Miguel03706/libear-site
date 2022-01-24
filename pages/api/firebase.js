@@ -23,17 +23,7 @@ const firebaseConfig = {
 // export default firebase;
 export default {
     criarContaFB: async (email, senha) => {
-        let sucesso = await firebase.auth().createUserWithEmailAndPassword(email, senha).then(() => {
-           const user = firebase.auth().currentUser
-                 //   user.updateProfile({
-                 //     displayName: "User",
-                 //     photoURL: "polar"
-                 //   })
-        }).then(() => {
-            console.log(sucesso + "Deu certo")
-        }).catch((error) => {
-         //   handleError(error);
-        })
+       console.log("teste")
     }
 }
 // export async function criarContaFB (email, senha){
