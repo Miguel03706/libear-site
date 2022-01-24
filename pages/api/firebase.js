@@ -33,6 +33,8 @@ export default {
             console.log(sucesso + "Deu certo")
         }).catch((error) => {
          //   handleError(error);
+         console.log(error)
+
         })
     }
 }
