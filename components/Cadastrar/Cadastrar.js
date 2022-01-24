@@ -18,6 +18,14 @@ export default function Cadastrar() {
                         textAlign="center"
                     />
                 </Center>
+                <Center>
+                    <Input
+                        variant="flushed"
+                        type="password"
+                        placeholder="Digite sua senha"
+                        textAlign="center"
+                    />
+                </Center>
             </form>
 
         </div>
