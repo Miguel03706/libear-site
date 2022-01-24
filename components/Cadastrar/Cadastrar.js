@@ -10,7 +10,7 @@ export default function Cadastrar() {
             <Center> <h1>Cadastrar</h1></Center>
 
             <form className={styles.form}>
-                <Center>
+                <Center marginTop="50px">
                     <Input
                         variant="flushed"
                         type="email"
@@ -18,7 +18,7 @@ export default function Cadastrar() {
                         textAlign="center"
                     />
                 </Center>
-                <Center>
+                <Center marginTop="50px">
                     <Input
                         variant="flushed"
                         type="password"
