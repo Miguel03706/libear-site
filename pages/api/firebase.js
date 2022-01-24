@@ -12,7 +12,6 @@ if (!firebase.apps.length) {
         projectId: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_PROJECTID,
         storageBucket: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_STORAGEBUCKET,
         messagingSenderId: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_MASSEAGINGSENDERID,
-        appId: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_APPID,
         measurementId: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_MEASUREMENTID
     });
 }
