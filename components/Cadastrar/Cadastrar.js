@@ -30,7 +30,8 @@ export default function Cadastrar() {
         setLoading(true);
         let { email, password } = formik.values;
         console.log("email: " + email + " Senha: " + password);
-        console.log(process.env.REACT_APP_FIREBASE_KEY)
+        console.log(process.env.REACT_APP_FIREBASE_KEY);
+        console.log(process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_AUTHDOMAIN);
         setLoading(false);
     }
 
