@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
-import "firebase/firebase-auth";
+import "firebase/auth";
 import "firebase/firebase-firestore";
 
 // export default function handler(req, res) {
