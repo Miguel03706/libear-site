@@ -79,3 +79,7 @@ export default function Cadastrar() {
         </div>
     );
 }
+
+export async function getServersideProps(){
+    
+}
