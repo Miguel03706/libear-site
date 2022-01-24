@@ -17,6 +17,7 @@ if (!firebase.apps.length) {
     });
 }
 
+export default firebase;
 // export async function criarContaFB (email, senha){
 //         let sucesso = await firebase.auth().createUserWithEmailAndPassword(email, senha).then(() => {
 //         //   const user = firebase.auth().currentUser;
