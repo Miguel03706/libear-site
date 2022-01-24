@@ -7,9 +7,14 @@ import "firebase/auth";
 
 if (!firebase.apps.length) {
     firebase.initializeApp({
-        apiKey: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_KEY,
-        authDomain: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_AUTHDOMAIN,
-        projectId: process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_PROJECTID,
+        apiKey: "AIzaSyBkvx5bs1Y3wL-cXtjQNuYHYZGeK6HCoxo",
+        authDomain: "libear-85621.firebaseapp.com",
+        databaseURL: "https://libear-85621-default-rtdb.firebaseio.com",
+        projectId: "libear-85621",
+        storageBucket: "libear-85621.appspot.com",
+        messagingSenderId: "877452629797",
+        appId: "1:877452629797:web:547f4ed6539598ab586ccc",
+        measurementId: "G-SG7V7ZDZVB"
     });
 }
 
