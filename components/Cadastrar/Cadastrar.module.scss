@@ -9,9 +9,18 @@
         width: auto;
     }
 
-    .form{
+    .Form{
         max-width: 300px;
         margin: auto auto;
+    }
+    .Link{
+        text-align: center;
+        a{
+            color: teal;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
     }
 
 }

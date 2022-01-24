@@ -10,7 +10,7 @@ export default function Cadastrar() {
             <Center> <Image src={`icons/logo_urso.webp`} /> </Center>
             <Center> <h1>Cadastrar</h1></Center>
 
-            <form className={styles.form}>
+            <form className={styles.Form}>
                 <Center marginTop="30px">
                     <Input
                         variant="flushed"
@@ -34,7 +34,7 @@ export default function Cadastrar() {
 
                 <Center>
                     <div className={styles.Link} >
-                        Já possui uma conta?<Link href="/entrar"><a>Entrar</a></Link>
+                        Já possui uma conta?<Link href="/entrar"><a> Entrar</a></Link>
                     </div>
                 </Center>
             </form>
