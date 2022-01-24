@@ -31,7 +31,6 @@ export default function Cadastrar() {
         let { email, password } = formik.values;
         console.log("email: " + email + " Senha: " + password);
         setLoading(false);
-
     }
 
     return (
@@ -60,7 +59,7 @@ export default function Cadastrar() {
                 </Center>
 
                 <Center marginTop="20px">
-                    <Button colorScheme="teal" onClick={cadastrarDados}>Cadastrar</Button>
+                    <Button colorScheme="teal" onClick={cadastrarDados} disabled={loading ? true : false }>Cadastrar</Button>
                 </Center>
 
                 <Center marginTop="20px">
