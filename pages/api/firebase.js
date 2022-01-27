@@ -1,13 +1,13 @@
 import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
-import { 
-     getAuth,
-     createUserWithEmailAndPassword,
-     setPersistence,
-     signInWithEmailAndPassword,
-     browserSessionPersistence,
-     updateProfile 
-    } from "firebase/auth";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    setPersistence,
+    signInWithEmailAndPassword,
+    browserSessionPersistence,
+    updateProfile
+} from "firebase/auth";
 
 // export default function handler(req, res) {
 //   res.status(200).json({ name: 'John Doe' })
@@ -22,65 +22,58 @@ const firebaseConfig = {
     messagingSenderId: "877452629797",
     appId: "1:877452629797:web:547f4ed6539598ab586ccc",
     measurementId: "G-SG7V7ZDZVB"
-  };
-  
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 
-  const handleError = (error) => {
+const handleError = (error) => {
     if (error.code) {
-      switch (error.code) {
-        case 'auth/weak-password':
-          alert('Senha muito fraca: Sua senha deve conter no minimo 6 caracteres');
-          break;
-        case 'auth/wrong-password':
-          alert('Senha incorreta');
-          break
-        case 'auth/email-already-in-use':
-          alert('Email já está em uso, coloque outro e tente novamente');
-          break
-        case "auth/invalid-email":
-          alert('Insira um email válido!');
-          break
-        case "auth/requires-recent-login":
-          alert('Para realizar essa ação é necessário relogar');
-          break
-          case "auth/user-not-found":
-            alert('Usuário não encontrado, tente usar outro email')
-          break
-      }
+        switch (error.code) {
+            case 'auth/weak-password':
+                alert('Senha muito fraca: Sua senha deve conter no minimo 6 caracteres');
+                break;
+            case 'auth/wrong-password':
+                alert('Senha incorreta');
+                break
+            case 'auth/email-already-in-use':
+                alert('Email já está em uso, coloque outro e tente novamente');
+                break
+            case "auth/invalid-email":
+                alert('Insira um email válido!');
+                break
+            case "auth/requires-recent-login":
+                alert('Para realizar essa ação é necessário relogar');
+                break
+            case "auth/user-not-found":
+                alert('Usuário não encontrado, tente usar outro email')
+                break
+        }
     }
-  }
-  
-  export default {
-    
+}
+
+export default {
+
     criarContaFB: async (email, password) => {
         const auth = getAuth();
-       
+
         await createUserWithEmailAndPassword(auth, email, password).then(() => {
 
-                updateProfile(auth.currentUser, {
-                    displayName: "User",
-                    photoURL: "polar"
-                 }).then(() => {
-                    setPersistence(auth, browserSessionPersistence).then(() => {
-                        return signInWithEmailAndPassword(auth, email, password);
-                     })
-                 }).catch((error) =>{
-                     console.log(error)
-                 })
+            updateProfile(auth.currentUser, {
+                displayName: "User",
+                photoURL: "polar"
+            }).then(() => {
+                setPersistence(auth, browserSessionPersistence).then(() => {
+                    return signInWithEmailAndPassword(auth, email, password);
+                })
+            }).then(() => {
 
-        }).then(() => {
-
-            const userKey = Object.keys(window.sessionStorage)
-                 .filter(it => it.startsWith('firebase:authUser'))[0];
-                 const usuario = userKey ? JSON.parse(sessionStorage.getItem(userKey)) : undefined;
-            console.log(usuario);
-
-            if(usuario !== undefined){
                 location.href = "http://localhost:3000/"
-            }
+
+            }).catch((error) => {
+                console.log(error)
+            })
 
         }).catch((error) => {
 

@@ -1,2 +1,2 @@
-export * from './Cadastrar';
-export { default } from './Cadastrar';
+export * from "./Cadastrar";
+export { default } from "./Cadastrar";

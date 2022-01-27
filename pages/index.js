@@ -1,7 +1,7 @@
 import React from "react";
-import Link from "next/link"
+import Link from "next/link";
 import { Image, Button, Heading, Text, Center } from "@chakra-ui/react";
-import styles from "../styles/Home.module.scss"
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
-import { Image, SimpleGrid, GridItem, Text, Box, Container, IconButton, Link, Center } from "@chakra-ui/react"
-import { FaInstagram } from 'react-icons/fa'
-import styles from "./footer.module.scss"
+import { Image, SimpleGrid, GridItem, Text, Box, Container, IconButton, Link, Center } from "@chakra-ui/react";
+import { FaInstagram } from "react-icons/fa";
+import styles from "./footer.module.scss";
 
 function Footer() {
 
