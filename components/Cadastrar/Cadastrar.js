@@ -31,7 +31,6 @@ export default function Cadastrar() {
         setLoading(true);
         let { email, password } = formik.values;
         API.criarContaFB(email, password);
-        console.log("email: " + email + " Senha: " + password);
         setLoading(false);
     }
 
