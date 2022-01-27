@@ -69,7 +69,7 @@ export default {
                 })
             }).then(() => {
 
-                location.href = "http://localhost:3000/"
+                location.href = "https://libear-site.vercel.app"
 
             }).catch((error) => {
                 console.log(error)
