@@ -1,6 +1,13 @@
 import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { 
+     getAuth,
+     createUserWithEmailAndPassword,
+     setPersistence,
+     signInWithEmailAndPassword,
+     browserSessionPersistence,
+     updateProfile 
+    } from "firebase/auth";
 
 // export default function handler(req, res) {
 //   res.status(200).json({ name: 'John Doe' })
@@ -20,39 +27,66 @@ const firebaseConfig = {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
-// export default firebase;
-export default {
+
+  const handleError = (error) => {
+    if (error.code) {
+      switch (error.code) {
+        case 'auth/weak-password':
+          alert('Senha muito fraca: Sua senha deve conter no minimo 6 caracteres');
+          break;
+        case 'auth/wrong-password':
+          alert('Senha incorreta');
+          break
+        case 'auth/email-already-in-use':
+          alert('Email já está em uso, coloque outro e tente novamente');
+          break
+        case "auth/invalid-email":
+          alert('Insira um email válido!');
+          break
+        case "auth/requires-recent-login":
+          alert('Para realizar essa ação é necessário relogar');
+          break
+          case "auth/user-not-found":
+            alert('Usuário não encontrado, tente usar outro email')
+          break
+      }
+    }
+  }
+  
+  export default {
     
-    criarContaFB: async (email, senha) => {
+    criarContaFB: async (email, password) => {
         const auth = getAuth();
-        await createUserWithEmailAndPassword(auth, email, senha).then(() => {
-           const user = firebase.auth().currentUser
-                 //   user.updateProfile({
-                 //     displayName: "User",
-                 //     photoURL: "polar"
-                 //   })
+       
+        await createUserWithEmailAndPassword(auth, email, password).then(() => {
+
+                updateProfile(auth.currentUser, {
+                    displayName: "User",
+                    photoURL: "polar"
+                 }).then(() => {
+                    setPersistence(auth, browserSessionPersistence).then(() => {
+                        return signInWithEmailAndPassword(auth, email, password);
+                     })
+                 }).catch((error) =>{
+                     console.log(error)
+                 })
+
         }).then(() => {
-            console.log(sucesso + "Deu certo")
+
+            const userKey = Object.keys(window.sessionStorage)
+                 .filter(it => it.startsWith('firebase:authUser'))[0];
+                 const usuario = userKey ? JSON.parse(sessionStorage.getItem(userKey)) : undefined;
+            console.log(usuario);
+
+            if(usuario !== undefined){
+                location.href = "http://localhost:3000/"
+            }
+
         }).catch((error) => {
-         //   handleError(error);
-         console.log(error)
+
+            handleError(error);
+            console.log(error)
 
         })
     }
 }
-// export async function criarContaFB (email, senha){
-//         let sucesso = await firebase.auth().createUserWithEmailAndPassword(email, senha).then(() => {
-//         //   const user = firebase.auth().currentUser;
-    
-//         //   user.updateProfile({
-//         //     displayName: "User",
-//         //     photoURL: "polar"
-//         //   })
-//         }).then(() => {
-//           console.log(sucesso + "Deu certo")
-//         }).catch((error) => {
-//         //   handleError(error);
-//         })
-//       }
-
-
