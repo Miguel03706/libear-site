@@ -57,9 +57,7 @@ export default {
 
     criarContaFB: async (email, password) => {
         const auth = getAuth();
-
         await createUserWithEmailAndPassword(auth, email, password).then(() => {
-
             updateProfile(auth.currentUser, {
                 displayName: "User",
                 photoURL: "polar"
@@ -68,18 +66,13 @@ export default {
                     return signInWithEmailAndPassword(auth, email, password);
                 })
             }).then(() => {
-
                 location.href = "https://libear-site.vercel.app"
-
             }).catch((error) => {
                 console.log(error)
             })
-
         }).catch((error) => {
-
             handleError(error);
             console.log(error)
-
         })
     }
 }
