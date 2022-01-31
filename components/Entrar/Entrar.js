@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import API from "../../pages/api/firebase";
-import styles from "./Cadastrar.module.scss";
+import styles from "./Entrar.module.scss";
 
-export default function Cadastrar() {
+
+export default function Entrar() {
 
     const [loading, setLoading] = useState(false);
 
@@ -27,17 +28,17 @@ export default function Cadastrar() {
         validateOnBlur: false
     })
 
-    async function cadastrarDados() {
+    async function validarDados() {
         setLoading(true);
         let { email, password } = formik.values;
-        API.criarContaFB(email, password);
+        //API.criarContaFB(email, password);
         setLoading(false);
     }
 
     return (
         <div className={styles.Container}>
             <Center> <Image src={`icons/logo_urso.webp`} /> </Center>
-            <Center> <h1>Cadastrar</h1></Center>
+            <Center> <h1>Entrar</h1></Center>
 
             <form className={styles.Form}>
                 <Center marginTop="30px">
@@ -62,7 +63,7 @@ export default function Cadastrar() {
                 <Center marginTop="20px">
                     <Button
                         colorScheme="teal"
-                        onClick={cadastrarDados}
+                        onClick={validarDados}
                         disabled={loading ? true : false}>
                         Cadastrar
                     </Button>
@@ -70,11 +71,10 @@ export default function Cadastrar() {
 
                 <Center marginTop="20px">
                     <div className={styles.Link} >
-                        Já possui uma conta?<Link href="/entrar"><a> Entrar</a></Link>
+                        Não possui uma conta?<Link href="/entrar"><a> Criar</a></Link>
                     </div>
                 </Center>
             </form>
-
         </div>
     );
 }
