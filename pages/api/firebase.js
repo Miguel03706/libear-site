@@ -65,7 +65,7 @@ export default {
                     return signInWithEmailAndPassword(auth, email, password);
                 })
             }).then(() => {
-                location.href = "https://libear-site.vercel.app"
+                location.href = "https://libear-site.vercel.app/entrar"
             }).catch((error) => {
                 handleError(error)
             })
