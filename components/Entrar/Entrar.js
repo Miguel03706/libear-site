@@ -31,7 +31,7 @@ export default function Entrar() {
     async function validarDados() {
         setLoading(true);
         let { email, password } = formik.values;
-        API.loginUser(email, password);
+        await API.loginUser(email, password);
         setLoading(false);
     }
 
