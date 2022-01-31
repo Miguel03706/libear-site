@@ -37,7 +37,7 @@ export default function Entrar() {
 
     return (
         <div className={styles.Container}>
-            <Center> <Image src={`icons/logo_urso.webp`} /> </Center>
+            <Center> <Image src={`icons/logo_urso_sorrindo.webp`} alt="icone de urso polar sorrindo"/> </Center>
             <Center> <h1>Entrar</h1></Center>
 
             <form className={styles.Form}>

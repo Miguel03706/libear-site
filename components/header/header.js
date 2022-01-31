@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Image, Button } from "@chakra-ui/react";
+import { Image, Button, Text } from "@chakra-ui/react";
 import styles from "./header.module.scss";
 
 export default function Header({ inicio, missoes, loja, config }) {
     const [user, setUser] = useState([]);
+    const [nav, setNav] = useState(false);
+
     useEffect(() => {
         const userKey = Object.keys(window.sessionStorage)
             .filter(it => it.startsWith('firebase:authUser'))[0];
@@ -21,28 +23,65 @@ export default function Header({ inicio, missoes, loja, config }) {
         { path: "/perfil", label: "", img: `../user/user_img/${user.photoURL}.webp` }
     ]
 
+    const routesMobile = [
+        { path: "/inicio", label: "Inicio"},
+        { path: "/missoes", label: "Missões"},
+        { path: "/loja", label: "Loja"},
+        { path: "/configurar", label: "Configurações"},
+        { path: "/perfil", label: "Perfil"}
+    ]
+
+    function toggleMenu(){
+        setNav(!nav);
+    }
+
     return (
         <>
             <header className={styles.header}>
                 <div className={styles.wrapper}>
-                    <nav>
-                        <ul>
-                            {routes.map(({ path, label, img, color }, idx) => (
-                                <li key={idx}>
-                                    <Link href={path}>
-                                        <Button colorScheme="teal" variant="link">
-                                            {color ?
-                                                <Image size="64px" src={img} className={styles.imgSelect} /> : <Image size="64px" src={img} />}
-                                            {color ? <a className={styles.imgSelect}><div className="label_header">{label}</div></a> : <a><div className="label_header">{label}</div></a>}
-                                        </Button>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
+                    {routes.map(({ path, label, img, color }, idx) => (
+                        <div key={idx}>
+                            <Link href={path}>
+                                <Button colorScheme="teal" variant="link">
+                                    {color ?
+                                        <Image size="64px" src={img} className={styles.imgSelect} /> : <Image size="64px" src={img} />}
+                                    {color ? <a className={styles.imgSelect}><div className="label_header">{label}</div></a> : <a><div className="label_header">{label}</div></a>}
+                                </Button>
+                            </Link>
+                        </div>
+                    ))}
                 </div>
             </header>
 
+
+            <header className={styles.headerMobile}>
+                <a href="/inicio">
+                <Image src="user/user_img/polar.webp" h="40px" alt="menu" />
+                </a>
+                <nav className="nav">
+                    <Button className="btn_mobile" onClick={toggleMenu}>
+                        {nav ? 
+                        <Image src="icons/uteis/teste2.webp" h="20px" alt="menu" /> 
+                        : 
+                        <Image src="icons/uteis/teste2.webp" h="20px" alt="menu"/> 
+                        }
+                    </Button>
+                    {nav ? 
+                    <ul className={styles.wrapperMobile}>
+                        {routesMobile.map(({ path, label,}, idx) => (
+                            <li key={idx}>
+                                <Link href={path}>
+                                    <Button colorScheme="teal" variant="link">
+                                      <Text color="black" fontWeight="normal">{label}</Text>
+                                    </Button>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    : null}
+                </nav>
+
+            </header>
         </>
     );
 }

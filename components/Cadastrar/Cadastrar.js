@@ -36,7 +36,7 @@ export default function Cadastrar() {
 
     return (
         <div className={styles.Container}>
-            <Center> <Image src={`icons/logo_urso.webp`} /> </Center>
+            <Center> <Image src={`icons/logo_urso.webp`} alt="icone de urso polar surpreso"/> </Center>
             <Center> <h1>Cadastrar</h1></Center>
 
             <form className={styles.Form}>

@@ -29,7 +29,7 @@ export default function Home() {
         </Center>
         <div className={styles.container_text}>
           <div className={styles.imagem1}>
-            <Center marginTop="30px"> <Image src="images/planeta-terra.webp" alt="foto do planeta Terra" /> </Center>
+            <Center marginTop="30px"> <Image src="images/planeta-terra.webp" alt="icone do planeta Terra" /> </Center>
           </div>
           <Center>
             <div className={styles.texto1}>
@@ -42,7 +42,7 @@ export default function Home() {
             </div>
           </Center>
           <div className={styles.imagem1}>
-            <Center marginTop="30px"> <Image src="images/moeda.webp" alt="foto de uma moeda" /> </Center>
+            <Center marginTop="30px"> <Image src="images/moeda.webp" alt="icone de uma moeda" /> </Center>
           </div>
           <Center>
             <div className={styles.texto1}>
