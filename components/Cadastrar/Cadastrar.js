@@ -30,7 +30,7 @@ export default function Cadastrar() {
     async function cadastrarDados() {
         setLoading(true);
         let { email, password } = formik.values;
-        API.criarContaFB(email, password);
+        API.createAccountFB(email, password);
         setLoading(false);
     }
 

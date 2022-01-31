@@ -3,8 +3,8 @@ import { initializeApp } from "firebase/app";
 import {
     getAuth,
     createUserWithEmailAndPassword,
-    setPersistence,
     signInWithEmailAndPassword,
+    setPersistence,
     browserSessionPersistence,
     updateProfile
 } from "firebase/auth";
@@ -54,8 +54,7 @@ const handleError = (error) => {
 }
 
 export default {
-
-    criarContaFB: async (email, password) => {
+    createAccountFB: async (email, password) => {
         const auth = getAuth();
         await createUserWithEmailAndPassword(auth, email, password).then(() => {
             updateProfile(auth.currentUser, {
@@ -68,11 +67,22 @@ export default {
             }).then(() => {
                 location.href = "https://libear-site.vercel.app"
             }).catch((error) => {
-                console.log(error)
+                handleError(error)
             })
         }).catch((error) => {
             handleError(error);
-            console.log(error)
         })
+    },
+    loginUser: async (email, password) => {
+        const auth = getAuth();
+
+        setPersistence(auth, browserSessionPersistence).then(() => {
+            return signInWithEmailAndPassword(auth, email, password);
+        }).then(() => {
+            console.log("logou")
+        })
+            .catch((error) => {
+               handleError(error)
+            });
     }
 }

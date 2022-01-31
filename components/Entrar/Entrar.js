@@ -31,7 +31,7 @@ export default function Entrar() {
     async function validarDados() {
         setLoading(true);
         let { email, password } = formik.values;
-        //API.criarContaFB(email, password);
+        API.loginUser(email, password);
         setLoading(false);
     }
 
@@ -65,13 +65,13 @@ export default function Entrar() {
                         colorScheme="teal"
                         onClick={validarDados}
                         disabled={loading ? true : false}>
-                        Cadastrar
+                        Entrar
                     </Button>
                 </Center>
 
                 <Center marginTop="20px">
                     <div className={styles.Link} >
-                        Não possui uma conta?<Link href="/entrar"><a> Criar</a></Link>
+                        Não possui uma conta?<Link href="/cadastrar"><a> Criar</a></Link>
                     </div>
                 </Center>
             </form>
