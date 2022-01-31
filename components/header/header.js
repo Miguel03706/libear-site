@@ -55,9 +55,9 @@ export default function Header({ inicio, missoes, loja, config }) {
 
 
             <header className={styles.headerMobile}>
-                <a href="/inicio">
+                <Link href="/inicio">
                 <Image src="user/user_img/polar.webp" h="40px" alt="menu" />
-                </a>
+                </Link>
                 <nav className="nav">
                     <Button className="btn_mobile" onClick={toggleMenu}>
                         {nav ? 
