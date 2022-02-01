@@ -43,7 +43,38 @@ export default function Atividades() {
                     {atividades.map(atividade => {
                         return (
                             <div key={atividade.id} className={styles.lista}>
-                                aaa
+                                 <Center>
+                            <CircularProgress value={0} size="100px" color={color}>
+                                <CircularProgressLabel>
+                                    <Popover initialFocusRef={initialFocusRef}
+                                        placement="bottom"
+                                        closeOnBlur={true}
+                                    >
+                                        <PopoverTrigger>
+                                            <Button colorScheme="#00FFFFFF" className={styles.button} h="80px"><Center><Image src={`icons/atividades/${atividade.img}.webp`} h="70px" /></Center></Button>
+                                        </PopoverTrigger>
+                                        <Portal>
+                                            <PopoverContent boxShadow="none !important">
+                                                <PopoverArrow />
+                                                <div className={styles.licao} key={atividade.id_atividade}>
+                                                    <div className={styles.titulo}><Center><h2>{atividade.titulo}</h2></Center></div>
+                                                </div>
+                                                <PopoverCloseButton />
+                                                <PopoverBody className={styles.popBody}>
+                                                    <Link href="explicacao/[explicacao]" as={`explicacao/${atividade.id_atividade}`}>
+                                                        <div className={styles.button}><Button colorScheme="blue" w="100%">Explicação</Button><br /></div>
+                                                    </Link>
+                                                    <Link href="licao/[licao]" as={`licao/${atividade.id_atividade}`}>
+                                                        <Button colorScheme="blue" w="100%">Atividade</Button>
+                                                    </Link>
+                                                </PopoverBody>
+                                            </PopoverContent>
+                                        </Portal>
+                                    </Popover>
+                                </CircularProgressLabel>
+                            </CircularProgress>
+                        <Center><div className={styles.subTitulo}><h2>{atividade.titulo}</h2></div></Center>
+                        </Center>
                             </div>
                         )
                     })}
