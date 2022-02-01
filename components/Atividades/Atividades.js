@@ -5,7 +5,6 @@ import styles from "./Atividades.module.scss";
 export default function Atividades() {
     return (
         <>
-            <Header />
             <div className={styles.teste}>aaaaaaaaa</div>
         </>
     );
