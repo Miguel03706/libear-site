@@ -8,6 +8,7 @@ import {
     browserSessionPersistence,
     updateProfile
 } from "firebase/auth";
+import { getFirestore, collection, doc, setDoc, query, where, getDocs, orderBy } from "firebase/firestore";
 
 // export default function handler(req, res) {
 //   res.status(200).json({ name: 'John Doe' })
@@ -26,6 +27,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getFirestore();
 
 
 const handleError = (error) => {
@@ -76,14 +78,25 @@ export default {
     loginUser: async (email, password) => {
         const auth = getAuth();
 
-        setPersistence(auth, browserSessionPersistence).then(() => {
-            return signInWithEmailAndPassword(auth, email, password);
-        }).then(() => {
-            location.href = "https://libear-site.vercel.app/inicio";
-
+        await setPersistence(auth, browserSessionPersistence).then(() => {
+            signInWithEmailAndPassword(auth, email, password).then(() => {
+                location.href = "https://libear-site.vercel.app/inicio";
+            })
         })
             .catch((error) => {
-               handleError(error)
+                handleError(error)
             });
-    }
+    },
+    readActivity: async () => {
+        const auth = getAuth();
+
+        // const citiesRef = collection(db, "Atividades");
+        const querySnapshot = await getDocs(collection(db, "ActivityRef"), orderBy("id", "desc"));
+        const res = [];
+
+        querySnapshot.forEach((doc) => {
+            res.push(doc.data())
+        });
+        return res;
+    },
 }
