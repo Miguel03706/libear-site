@@ -65,7 +65,7 @@ export default {
                     return signInWithEmailAndPassword(auth, email, password);
                 })
             }).then(() => {
-                location.href = "https://libear-site.vercel.app/entrar"
+                location.href = "https://libear-site.vercel.app/entrar";
             }).catch((error) => {
                 handleError(error)
             })
@@ -79,7 +79,8 @@ export default {
         setPersistence(auth, browserSessionPersistence).then(() => {
             return signInWithEmailAndPassword(auth, email, password);
         }).then(() => {
-            console.log("logou")
+            location.href = "https://libear-site.vercel.app/inicio";
+
         })
             .catch((error) => {
                handleError(error)
