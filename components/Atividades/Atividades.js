@@ -61,10 +61,10 @@ export default function Atividades() {
                                                 </div>
                                                 <PopoverCloseButton />
                                                 <PopoverBody className={styles.popBody}>
-                                                    <Link href="explicacao/[explicacao]" as={`explicacao/${atividade.id}`}>
+                                                    <Link href="explicacao/[explicacao]" as={`explicacao/${atividade.id}`} passHref>
                                                         <div className={styles.button}><Button colorScheme="blue" w="100%" marginBottom={2}>Explicação</Button><br /></div>
                                                     </Link>
-                                                    <Link href="licao/[licao]" as={`licao/${atividade.id}`}>
+                                                    <Link href="licao/[licao]" as={`licao/${atividade.id}`} passHref>
                                                         <Button colorScheme="blue" w="100%">Atividade</Button>
                                                     </Link>
                                                 </PopoverBody>
