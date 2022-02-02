@@ -1,28 +1,51 @@
-.Container{
+.Container {
     max-width: 1200px;
-    height: 30vh;
+    height: auto;
     margin: 50px auto;
     display: flex;
     justify-content: space-between;
     flex: 1 1 200px;
 
-    .Atividades{
+    .Atividades {
         text-align: center;
         width: 100%;
-        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .Lista {
+            .button:focus {
+                box-shadow: none !important;
+            }
+            
+        }
+        > div:nth-child(5n + 1) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .Loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .subTitulo {
+            width: inherit;
+            margin-top: 150px;
+            margin-left: -100px;
+        }
+        .titulo {
+            position: relative;
+        }
     }
 
-    .Propaganda{
+    .Propaganda {
         justify-self: center;
         width: 100%;
         padding: 20px;
-
     }
 }
 
-
 @media only screen and (max-width: 500px) {
-    .Container{
+    .Container {
         flex-wrap: wrap;
     }
 }

@@ -34,7 +34,7 @@ export default function Atividades() {
 
                     {atividades.length <= 0 &&
                         <>
-                            <div className={styles.loading}>
+                            <div className={styles.Loading}>
                                 <img src="../icons/uteis/loading.gif" alt="carregando" />
                             </div>
                         </>
@@ -42,9 +42,9 @@ export default function Atividades() {
 
                     {atividades.map(atividade => {
                         return (
-                            <div key={atividade.id} className={styles.lista}>
+                            <div key={atividade.id} className={styles.Lista}>
                                  <Center>
-                            <CircularProgress value={0} size="100px" color={color}>
+                            <CircularProgress value={50} size="100px" color={color}>
                                 <CircularProgressLabel>
                                     <Popover initialFocusRef={initialFocusRef}
                                         placement="bottom"
@@ -57,14 +57,14 @@ export default function Atividades() {
                                             <PopoverContent boxShadow="none !important">
                                                 <PopoverArrow />
                                                 <div className={styles.licao} key={atividade.id_atividade}>
-                                                    <div className={styles.titulo}><Center><h2>{atividade.titulo}</h2></Center></div>
+                                                    <div className={styles.titulo}><Center marginTop="10px"><h2>{atividade.titulo}</h2></Center></div>
                                                 </div>
                                                 <PopoverCloseButton />
                                                 <PopoverBody className={styles.popBody}>
-                                                    <Link href="explicacao/[explicacao]" as={`explicacao/${atividade.id_atividade}`}>
-                                                        <div className={styles.button}><Button colorScheme="blue" w="100%">Explicação</Button><br /></div>
+                                                    <Link href="explicacao/[explicacao]" as={`explicacao/${atividade.id}`}>
+                                                        <div className={styles.button}><Button colorScheme="blue" w="100%" marginBottom={2}>Explicação</Button><br /></div>
                                                     </Link>
-                                                    <Link href="licao/[licao]" as={`licao/${atividade.id_atividade}`}>
+                                                    <Link href="licao/[licao]" as={`licao/${atividade.id}`}>
                                                         <Button colorScheme="blue" w="100%">Atividade</Button>
                                                     </Link>
                                                 </PopoverBody>

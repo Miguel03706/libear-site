@@ -90,8 +90,11 @@ export default {
     readActivity: async () => {
         const auth = getAuth();
 
-        // const citiesRef = collection(db, "Atividades");
-        const querySnapshot = await getDocs(collection(db, "ActivityRef"), orderBy("id", "desc"));
+        const ref = collection(db, "ActivityRef");
+
+        // Create a query against the collection.
+        const q = query(ref, orderBy("id"));
+        const querySnapshot = await getDocs(q);
         const res = [];
 
         querySnapshot.forEach((doc) => {
