@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Center, Text } from "@chakra-ui/react"
 import API from "../../pages/api/firebase";
-import styles from "./orientacao.module.scss";
+import styles from "./Orientacao.module.scss";
 
 function Orientacao({ slug }) {
     const [explicacao, setExplicacao] = useState([]);
@@ -9,10 +9,6 @@ function Orientacao({ slug }) {
     useEffect(async () => {
         await API.getOrientation(slug).then(setExplicacao);
     }, [])
-
-    useEffect(() => {
-        console.log(explicacao);
-    }, [explicacao])
 
     return (
         <>

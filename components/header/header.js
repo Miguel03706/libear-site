@@ -41,7 +41,7 @@ export default function Header({ inicio, missoes, loja, config }) {
                 <div className={styles.wrapper}>
                     {routes.map(({ path, label, img, color }, idx) => (
                         <div key={idx}>
-                            <Link href={path}>
+                            <Link href={path} passHref>
                                 <Button colorScheme="teal" variant="link">
                                     {color ?
                                         <Image size="64px" src={img} className={styles.imgSelect} /> : <Image size="64px" src={img} />}

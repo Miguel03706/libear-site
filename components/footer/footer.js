@@ -23,7 +23,7 @@ function Footer() {
                     <GridItem w="100%" h="100px">
                         <Container centerContent h="100px" >
                             <Box h="100%" marginTop="25px">
-                                <Link href="https://www.instagram.com/libear_librasparatodos/?igshid=17n81zkb3gy4u" isExternal>
+                                <Link href="https://www.instagram.com/libear_librasparatodos/?igshid=17n81zkb3gy4u" isExternal passHref>
                                     <IconButton
                                         isRound={true}
                                         colorScheme="cyan"
