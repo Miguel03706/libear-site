@@ -8,7 +8,16 @@ import {
     browserSessionPersistence,
     updateProfile
 } from "firebase/auth";
-import { getFirestore, collection, doc, setDoc, query, where, getDocs, orderBy } from "firebase/firestore";
+import {
+    getFirestore,
+    collection,
+    doc,
+    setDoc,
+    query,
+    where,
+    getDocs,
+    orderBy
+} from "firebase/firestore";
 
 // export default function handler(req, res) {
 //   res.status(200).json({ name: 'John Doe' })
@@ -94,6 +103,18 @@ export default {
 
         // Create a query against the collection.
         const q = query(ref, orderBy("id"));
+        const querySnapshot = await getDocs(q);
+        const res = [];
+
+        querySnapshot.forEach((doc) => {
+            res.push(doc.data())
+        });
+        return res;
+    },
+    getOrientation: async (id) => {
+        const auth = getAuth();
+        const ref = collection(db, "ActivityRef");
+        const q = query(ref, where("id", "==", parseInt(id)));
         const querySnapshot = await getDocs(q);
         const res = [];
 
