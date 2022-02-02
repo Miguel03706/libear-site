@@ -6,8 +6,8 @@ import styles from "./orientacao.module.scss";
 function Orientacao({ slug }) {
     const [explicacao, setExplicacao] = useState([]);
 
-    useEffect(() => {
-        API.getOrientation(slug).then(setExplicacao);
+    useEffect(async () => {
+        await API.getOrientation(slug).then(setExplicacao);
     }, [])
 
     useEffect(() => {
