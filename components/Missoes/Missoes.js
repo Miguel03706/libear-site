@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react"
 import API from "../../pages/api/firebase";
 import { Text, Flex, Center, Square, Button, Image, useColorMode } from "@chakra-ui/react";
-import styles from "./missoes.module.scss"
+import styles from "./Missoes.module.scss"
 
 function Missoes() {
     const [missoes, setMissoes] = useState([])
