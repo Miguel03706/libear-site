@@ -18,10 +18,10 @@ function Missoes() {
         evt.preventDefault();
     }, [missoes])
 
-    useEffect(async () => {
-        // await DB.completaMissao(completos);
-        // DB.exibirMissoes().then(setMissoes)
-    }, [completos])
+    // useEffect(async () => {
+    //     await DB.completaMissao(completos);
+    //     DB.exibirMissoes().then(setMissoes)
+    // }, [completos])
 
     return (
         <div className={styles.container}>
