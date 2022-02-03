@@ -10,9 +10,9 @@ function Missoes() {
 
 
 
-    useEffect(() => {
-      //  DB.exibirMissoes().then(setMissoes)
-    }, [])
+    // useEffect(() => {
+    //   //  DB.exibirMissoes().then(setMissoes)
+    // }, [])
 
     const handleFinaliza = useCallback(evt => {
         evt.preventDefault();
