@@ -16,8 +16,10 @@ import {
     query,
     where,
     getDocs,
+    addDoc,
     orderBy
 } from "firebase/firestore";
+import { Missoes, Compras, Progresso } from "../../lib/user";
 
 // export default function handler(req, res) {
 //   res.status(200).json({ name: 'John Doe' })
@@ -66,12 +68,24 @@ const handleError = (error) => {
 
 export default {
     createAccountFB: async (email, password) => {
-        const auth = getAuth();
+        const auth = await getAuth();
         await createUserWithEmailAndPassword(auth, email, password).then(() => {
             updateProfile(auth.currentUser, {
                 displayName: "User",
                 photoURL: "polar"
             }).then(() => {
+                const id = auth.currentUser.uid;
+                const userName = auth.currentUser.displayName;
+                addDoc(collection(db, "userRef",), {
+                    id: `${id}`,
+                    dinheiro: 0,
+                    pontos: 0,
+                    atividades_concluidas: "",
+                    compras: Compras,
+                    missoes: Missoes,
+                    progresso: Progresso,
+                    username: `${userName}`,
+                });
                 setPersistence(auth, browserSessionPersistence).then(() => {
                     return signInWithEmailAndPassword(auth, email, password);
                 })
@@ -122,5 +136,40 @@ export default {
             res.push(doc.data())
         });
         return res;
+    },
+    getMissions: async () => {
+        const auth = await getAuth();
+
+         const ref = collection(db, "missions");
+         const q = query(ref, orderBy("id"));
+         const querySnapshot = await getDocs(q);
+         const res = [];
+
+         querySnapshot.forEach((doc) => {
+             res.push(doc.data())
+         });
+
+         return res;
+    },
+    getMissionsComplete: async () => {
+        const auth = await getAuth();
+        const id = auth.currentUser.uid;
+
+         const res = [];
+         
+         const refComplete = collection(db, "userRef");
+         const queryMissions = query(refComplete, where("id", "==", id));
+         const queryComplete = await getDocs(queryMissions);
+         queryComplete.forEach((doc) => {
+            res.push(JSON.parse(doc.data().missoes))
+        });
+
+         return res;
+    },
+    completeMission: async (missionId) => {
+        //FIXME: CRIAR MANEIRA DE COMPLETAR MISSÕES
+        const auth = getAuth();
+        const uid = auth.uid;
+        console.log(missionId)
     },
 }
