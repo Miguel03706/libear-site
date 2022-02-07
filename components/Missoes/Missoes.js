@@ -16,14 +16,13 @@ function Missoes() {
         await API.getMissions().then(setMissoes);
     }, []);
 
-    const handleFinaliza = useCallback(evt => {
-        evt.preventDefault();
-    }, [missoes])
+  
 
      useEffect(async () => {
-        //FIXME: CRIAR MANEIRA DE COMPLETAR MISSÕES
+        //FIXME: ADD TODAS AS MISSÕES
          await API.completeMission(completar);
-         //await API.getMissions().then(setMissoes)
+         await API.getMissionsComplete().then(setCompletos);
+         await API.getMissions().then(setMissoes);
      }, [completar])
 
     return (
