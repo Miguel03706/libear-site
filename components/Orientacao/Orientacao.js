@@ -6,8 +6,11 @@ import styles from "./Orientacao.module.scss";
 function Orientacao({ slug }) {
     const [explicacao, setExplicacao] = useState([]);
 
-    useEffect(async () => {
-        await API.getOrientation(slug).then(setExplicacao);
+    useEffect(() => {
+        async function fetchData() {
+            await API.getOrientation(slug).then(setExplicacao);
+        }
+        fetchData();
     }, [])
 
     return (
@@ -16,14 +19,14 @@ function Orientacao({ slug }) {
                 return (
                     <div key={orientacao.id}>
                         <Center as="h2" fontSize="26px" marginTop="50px" color="#00c3d3"><Text>{orientacao.titulo}</Text></Center>
-                      <Center className={styles.video} marginTop="50px">
-                                <iframe
-                                    title={orientacao.titulo}
-                                    src={orientacao.url}
-                                    allowFullScreen
-                                    height="300px"
-                                    width="50%"
-                                />
+                        <Center className={styles.video} marginTop="50px">
+                            <iframe
+                                title={orientacao.titulo}
+                                src={orientacao.url}
+                                allowFullScreen
+                                height="300px"
+                                width="50%"
+                            />
                         </Center>
                         <div className={styles.titulo}>
                             <Center marginTop="50px"><Text>{orientacao.orientacao}</Text></Center>

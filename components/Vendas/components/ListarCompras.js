@@ -17,8 +17,8 @@ export default function ListarCompras({ money }) {
     }, []);
 
     useEffect(() => {
-        console.log(compras);
         { compras.map(itens => { setDinheiro(itens.dinheiro) }) }
+        console.log(compras);
     }, [compras]);
 
     useEffect(() => {
