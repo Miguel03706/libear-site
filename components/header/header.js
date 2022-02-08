@@ -55,8 +55,8 @@ export default function Header({ inicio, missoes, loja, config }) {
 
 
             <header className={styles.headerMobile}>
-                <Link href="/inicio">
-                <Image src="user/user_img/polar.webp" h="40px" alt="menu" alt="icone de urso polar" />
+                <Link href="/inicio" passHref>
+                <Image src="user/user_img/polar.webp" h="40px" alt="icone de urso polar" />
                 </Link>
                 <nav className="nav">
                     <Button className="btn_mobile" onClick={toggleMenu}>
@@ -70,7 +70,7 @@ export default function Header({ inicio, missoes, loja, config }) {
                     <ul className={styles.wrapperMobile}>
                         {routesMobile.map(({ path, label,}, idx) => (
                             <li key={idx}>
-                                <Link href={path}>
+                                <Link href={path} passHref>
                                     <Button colorScheme="teal" variant="link">
                                       <Text color="black" fontWeight="normal">{label}</Text>
                                     </Button>
