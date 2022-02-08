@@ -29,7 +29,7 @@ export default function ListarCompras({ money }) {
             await money(dinheiro);
         }
         setMoney();
-    }, [dinheiro]);
+    }, [dinheiro, money]);
 
     // useEffect(async () => {
     //     if (parseInt(dinheiro) >= parseInt(preco)) {

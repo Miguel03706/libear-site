@@ -14,7 +14,7 @@ export default function Atividades() {
     const [atividades, setAtividades] = useState([]);
     const [color, setColor] = useState('');
 
-    useEffect(async () => {
+    useEffect(() => {
         async function fetchData() {
             await API.readActivity().then(setAtividades);
         }

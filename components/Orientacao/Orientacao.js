@@ -11,7 +11,7 @@ function Orientacao({ slug }) {
             await API.getOrientation(slug).then(setExplicacao);
         }
         fetchData();
-    }, [])
+    }, [slug])
 
     return (
         <>

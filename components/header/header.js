@@ -15,12 +15,12 @@ export default function Header({ inicio, missoes, loja, config }) {
     }, []);
 
     const routes = [
-        { path: "/inicio", label: "Inicio", img: "../icons/inicio.webp", color: inicio },
-        { path: "/missoes", label: "Missões", img: "../icons/missoes.webp", color: missoes },
-        { path: "/loja", label: "Loja", img: "../icons/loja.webp", color: loja },
-        { path: "/configurar", label: "Configurações", img: "../icons/config.webp", color: config },
-        { path: "/inicio", label: '0', img: "../icons/chama-cinza.webp" },
-        { path: "/perfil", label: "", img: `../user/user_img/${user.photoURL}.webp` }
+        { path: "/inicio", label: "Inicio", img: "../icons/inicio.webp", color: inicio, alt: "icone de uma casa" },
+        { path: "/missoes", label: "Missões", img: "../icons/missoes.webp", color: missoes, alt: "icone de um livro" },
+        { path: "/loja", label: "Loja", img: "../icons/loja.webp", color: loja, alt: "icone de uma loja" },
+        { path: "/configurar", label: "Configurações", img: "../icons/config.webp", color: config, alt: "icone de duas engrenagens" },
+        { path: "/inicio", label: '0', img: "../icons/chama-cinza.webp", alt: "icone de chama" },
+        { path: "/perfil", label: "", img: `../user/user_img/${user.photoURL}.webp`, alt: "icone do usuario" }
     ]
 
     const routesMobile = [
@@ -39,12 +39,12 @@ export default function Header({ inicio, missoes, loja, config }) {
         <>
             <header className={styles.header}>
                 <div className={styles.wrapper}>
-                    {routes.map(({ path, label, img, color }, idx) => (
+                    {routes.map(({ path, label, img, color, alt }, idx) => (
                         <div key={idx}>
                             <Link href={path} passHref>
                                 <Button colorScheme="teal" variant="link">
                                     {color ?
-                                        <Image size="64px" src={img} className={styles.imgSelect} /> : <Image size="64px" src={img} />}
+                                        <Image size="64px" src={img} className={styles.imgSelect} alt={alt}/> : <Image size="64px" src={img} alt={alt}/>}
                                     {color ? <a className={styles.imgSelect}><div className="label_header">{label}</div></a> : <a><div className="label_header">{label}</div></a>}
                                 </Button>
                             </Link>
@@ -56,7 +56,7 @@ export default function Header({ inicio, missoes, loja, config }) {
 
             <header className={styles.headerMobile}>
                 <Link href="/inicio">
-                <Image src="user/user_img/polar.webp" h="40px" alt="menu" />
+                <Image src="user/user_img/polar.webp" h="40px" alt="menu" alt="icone de urso polar" />
                 </Link>
                 <nav className="nav">
                     <Button className="btn_mobile" onClick={toggleMenu}>
