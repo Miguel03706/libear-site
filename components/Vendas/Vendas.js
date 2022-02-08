@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Grid, Center } from "@chakra-ui/react"
-import ListarCompras from "./Components/ListarCompras";
+import ListarCompras from "./components/ListarCompras";
 import styles from "./Vendas.module.scss";
 
 export default function Vendas() {
