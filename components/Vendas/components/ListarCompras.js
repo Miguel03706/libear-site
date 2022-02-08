@@ -17,12 +17,18 @@ export default function ListarCompras({ money }) {
     }, []);
 
     useEffect(() => {
-        { compras.map(itens => { setDinheiro(itens.dinheiro) }) }
+        async function fetchMoney(){
+         { await compras.map(itens => {  setDinheiro(itens.dinheiro) }) }
+        }
+        fetchMoney();
         console.log(compras);
     }, [compras]);
 
     useEffect(() => {
-        money(dinheiro)
+        async function setMoney(){
+            await money(dinheiro);
+        }
+        setMoney();
     }, [dinheiro]);
 
     // useEffect(async () => {
