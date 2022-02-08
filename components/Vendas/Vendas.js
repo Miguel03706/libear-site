@@ -23,7 +23,7 @@ export default function Vendas() {
             >
                 <ListarCompras money={handleMoney} />
             </Grid>
-            <div class={styles.space}></div>
+            <div className={styles.space}></div>
         </>
     )
 }

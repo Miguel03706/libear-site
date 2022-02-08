@@ -9,8 +9,11 @@ export default function ListarCompras({ money }) {
     const [comprar, setComprar] = useState([]);
     const toast = useToast()
 
-    useEffect(async () => {
-       await  API.listPurchases().then(setCompras);
+    useEffect(() => {
+        async function fetchData(){
+            await  API.listPurchases().then(setCompras);
+        }
+        fetchData();
     }, []);
 
     useEffect(() => {
@@ -20,7 +23,6 @@ export default function ListarCompras({ money }) {
 
     useEffect(() => {
         money(dinheiro)
-        console.log(dinheiro);
     }, [dinheiro]);
 
     // useEffect(async () => {

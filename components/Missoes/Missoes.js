@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect } from "react"
 import API from "../../pages/api/firebase";
 import { Text, Flex, Center, Square, Button, Image, useColorMode } from "@chakra-ui/react";
 import styles from "./Missoes.module.scss"
@@ -11,18 +11,26 @@ function Missoes() {
 
 
 
-    useEffect(async () => {
-        await API.getMissionsComplete().then(setCompletos);
-        await API.getMissions().then(setMissoes);
+    useEffect(() => {
+        async function fetchData(){
+            await API.getMissionsComplete().then(setCompletos);
+            await API.getMissions().then(setMissoes);
+        }
+        fetchData();
+        
     }, []);
 
   
 
-     useEffect(async () => {
+     useEffect(() => {
+         async function complete(){
+            
          //FIXME: tentar arrumar a att de estado
          await API.completeMission(completar);
          await API.getMissionsComplete().then(setCompletos);
          await API.getMissions().then(setMissoes);
+        }
+        complete();
      }, [completar])
 
     return (
