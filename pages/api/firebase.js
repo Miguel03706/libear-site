@@ -71,34 +71,42 @@ const handleError = (error) => {
 export default {
     createAccountFB: async (email, password) => {
         const auth = await getAuth();
-        await createUserWithEmailAndPassword(auth, email, password).then(() => {
-            updateProfile(auth.currentUser, {
-                displayName: "User",
-                photoURL: "polar"
-            }).then(() => {
-                const id = auth.currentUser.uid;
-                const userName = auth.currentUser.displayName;
-                setDoc(doc(db, "userRef", `${id}`), {
-                    id: `${id}`,
-                    dinheiro: 0,
-                    pontos: 0,
-                    atividades_concluidas: "",
-                    compras: Compras,
-                    missoes: Missoes,
-                    progresso: Progresso,
-                    username: `${userName}`,
-                });
-                setPersistence(auth, browserSessionPersistence).then(() => {
-                    return signInWithEmailAndPassword(auth, email, password);
+        await createUserWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                updateProfile(auth.currentUser, {
+                    displayName: "User",
+                    photoURL: "polar"
                 })
-            }).then(() => {
-                location.href = "https://libear-site.vercel.app/entrar";
+                    .then(async () => {
+                        const id = await auth.currentUser.uid;
+                        const userName = await auth.currentUser.displayName;
+                        //TODO: TRANSFORMAR EM CONST E IMPORTAR PARA CÁ
+                        await setDoc(doc(db, "userRef", `${id}`), {
+                            id: `${id}`,
+                            dinheiro: 0,
+                            pontos: 0,
+                            atividades_concluidas: "",
+                            compras: Compras,
+                            missoes: Missoes,
+                            progresso: Progresso,
+                            username: `${userName}`,
+                        })
+                            .then(() => {
+                                setPersistence(auth, browserSessionPersistence)
+                                    .then(() => {
+                                        return signInWithEmailAndPassword(auth, email, password);
+                                    })
+                            })
+                            .then(() => {
+                                location.href = "https://libear-site.vercel.app/entrar";
+                            })
+                            .catch((error) => {
+                                handleError(error)
+                            })
+                    })
             }).catch((error) => {
-                handleError(error)
+                handleError(error);
             })
-        }).catch((error) => {
-            handleError(error);
-        })
     },
     loginUser: async (email, password) => {
         const auth = getAuth();
@@ -169,7 +177,6 @@ export default {
         return res;
     },
     completeMission: async (missionId) => {
-        //FIXME: CRIAR MANEIRA DE COMPLETAR MISSÕES
         const auth = getAuth();
         const id = auth.currentUser.uid;
         const res = [];
@@ -191,6 +198,31 @@ export default {
                 missoes: `${newMission}`
             });
         })
+
+    },
+    listPurchases: async () => {
+        const auth = await getAuth();
+        const id = auth.currentUser.uid;
+        const res = [];
+
+        const refComplete = collection(db, "shop");
+        const queryMissions = query(refComplete, orderBy("org"));
+        const queryComplete = await getDocs(queryMissions);
+        queryComplete.forEach((doc) => {
+            res.push(doc.data())
+        });
+        const refMoney = collection(db, "userRef");
+        const queryMoney = query(refMoney, where("id", "==", id));
+        const qMoney = await getDocs(queryMoney);
+        qMoney.forEach((doc) => {
+            res.push(doc.data().dinheiro)
+        });
+
+
+
+        return res;
+    },
+    buyItens: async () => {
 
     },
 }

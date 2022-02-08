@@ -19,7 +19,7 @@ function Missoes() {
   
 
      useEffect(async () => {
-        //FIXME: ADD TODAS AS MISSÕES
+         //FIXME: tentar arrumar a att de estado
          await API.completeMission(completar);
          await API.getMissionsComplete().then(setCompletos);
          await API.getMissions().then(setMissoes);
