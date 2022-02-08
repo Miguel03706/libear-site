@@ -10,22 +10,22 @@ export default function ListarCompras({ money }) {
     const toast = useToast()
 
     useEffect(() => {
-        async function fetchData(){
-            await  API.listPurchases().then(setCompras);
+        async function fetchData() {
+            await API.listPurchases().then(setCompras);
         }
         fetchData();
     }, []);
 
     useEffect(() => {
-        async function fetchMoney(){
-         { await compras.map(itens => {  setDinheiro(itens.dinheiro) }) }
+        async function fetchMoney() {
+            { await compras.map(itens => { setDinheiro(itens.dinheiro) }) }
         }
         fetchMoney();
         console.log(compras);
     }, [compras]);
 
     useEffect(() => {
-        async function setMoney(){
+        async function setMoney() {
             await money(dinheiro);
         }
         setMoney();
