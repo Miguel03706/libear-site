@@ -4,29 +4,30 @@ import { Text, Image, Center, Square, Box, Button, useToast } from "@chakra-ui/r
 
 export default function ListarCompras({ money }) {
     const [compras, setCompras] = useState([]);
-    const [dinheiro, setDinheiro] = useState(0);
-    const [preco, setPreco] = useState(0);
     const [comprar, setComprar] = useState([]);
+    const [bought, setBought] = useState([]);
+    const [dinheiro, setDinheiro] = useState([]);
+    const [preco, setPreco] = useState(0);
     const toast = useToast()
 
     useEffect(() => {
         async function fetchData() {
             await API.listPurchases().then(setCompras);
+            //TODO: ARRUMAR O BOUGHT (itens comprados)
+            await API.setBuy().then(setBought);
+            await API.setMoney().then(setDinheiro);
         }
         fetchData();
     }, []);
 
-    useEffect(() => {
-        async function fetchMoney() {
-            { await compras.map(itens => { setDinheiro(itens.dinheiro) }) }
-        }
-        fetchMoney();
-        console.log(compras);
-    }, [compras]);
+    // useEffect(() => {
+    //     console.log(bought);
+    // }, [bought]);
 
     useEffect(() => {
         async function setMoney() {
-            await money(dinheiro);
+            { await dinheiro.map(itens => { money(itens.dinheiro) }) }
+            //await money(dinheiro);
         }
         setMoney();
     }, [dinheiro, money]);
@@ -49,7 +50,9 @@ export default function ListarCompras({ money }) {
 
     return (
         <>
-            {/* {compras.map(itens => {
+            {compras.map(itens => {
+                //TODO: ARRUMAR O BOUGHT (itens comprados)
+                //    console.log(bought[0])
                 return (
                     <div key={itens.id}>
                         <Box w="auto" border="1px solid black">
@@ -63,7 +66,7 @@ export default function ListarCompras({ money }) {
                         </Box>
                         <Square w="auto" border="1px solid black" p="5px">
                             {
-                                itens.compras[`${itens.id}`].buy == 0 ?
+                                itens[`${itens.id}`] == false ?
                                     <Button colorScheme="blue"
                                         onClick={(e) => {
                                             setPreco(itens.preco)
@@ -78,7 +81,7 @@ export default function ListarCompras({ money }) {
                         </Square>
                     </div>
                 )
-            })} */}
+            })}
         </>
     )
 }

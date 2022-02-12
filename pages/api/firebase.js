@@ -211,15 +211,35 @@ export default {
         queryComplete.forEach((doc) => {
             res.push(doc.data())
         });
+
+        return res;
+    },
+    setMoney: async () => {
+        const auth = await getAuth();
+        const id = auth.currentUser.uid;
+        const res = [];
+
         const refMoney = collection(db, "userRef");
         const queryMoney = query(refMoney, where("id", "==", id));
         const qMoney = await getDocs(queryMoney);
         qMoney.forEach((doc) => {
-            res.push(doc.data().dinheiro)
+            res.push(doc.data().dinheiro);
         });
+        
+        return res;
+    },
+    setBuy: async () => {
+        const auth = await getAuth();
+        const id = auth.currentUser.uid;
+        const res = [];
 
-
-
+        const refMoney = collection(db, "userRef");
+        const queryMoney = query(refMoney, where("id", "==", id));
+        const qMoney = await getDocs(queryMoney);
+        qMoney.forEach((doc) => {
+            res.push(doc.data().compras);
+        });
+        
         return res;
     },
     buyItens: async () => {
