@@ -114,11 +114,11 @@ export default {
         await setPersistence(auth, browserSessionPersistence).then(() => {
             signInWithEmailAndPassword(auth, email, password).then(() => {
                 location.href = "https://libear-site.vercel.app/inicio";
-            })
-        })
-            .catch((error) => {
+            }) .catch((error) => {
                 handleError(error)
             });
+        })
+           
     },
     readActivity: async () => {
         const auth = getAuth();
@@ -177,8 +177,8 @@ export default {
         return res;
     },
     completeMission: async (missionId) => {
-        const auth = getAuth();
-        const id = auth.currentUser.uid;
+        const auth = await getAuth();
+        const id = await auth.currentUser.uid;
         const res = [];
 
         const refComplete = collection(db, "userRef");
@@ -189,7 +189,6 @@ export default {
         });
 
         res.map(mission => {
-            const missao = mission[`${missionId}`] = 1;
 
             const newMission = JSON.stringify(mission);
 
@@ -202,7 +201,6 @@ export default {
     },
     listPurchases: async () => {
         const auth = await getAuth();
-        const id = auth.currentUser.uid;
         const res = [];
 
         const refComplete = collection(db, "shop");
@@ -239,8 +237,11 @@ export default {
         qMoney.forEach((doc) => {
             res.push(doc.data().compras);
         });
+        const response = [];
+
+         await res.map(itens => { response.push(itens)}) 
         
-        return res;
+        return response;
     },
     buyItens: async () => {
 

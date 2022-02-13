@@ -20,39 +20,43 @@ export default function ListarCompras({ money }) {
         fetchData();
     }, []);
 
-    // useEffect(() => {
-    //     console.log(bought);
-    // }, [bought]);
+     useEffect(() => {
+         console.log(bought);
+     }, [bought]);
 
     useEffect(() => {
         async function setMoney() {
             { await dinheiro.map(itens => { money(itens.dinheiro) }) }
+
             //await money(dinheiro);
         }
         setMoney();
     }, [dinheiro, money]);
 
-    // useEffect(async () => {
-    //     if (parseInt(dinheiro) >= parseInt(preco)) {
-    //         await API.buyItens(comprar, preco);
-    //         await API.listPurchases().then(setCompras);
-    //     } else if (parseInt(preco) > parseInt(dinheiro)) {
-    //         toast({
-    //             title: "Sem dinheiro.",
-    //             description: "Você não tem dinheiro suficiente para comprar esse produto, realize mais atividades para ganhar mais prêmios.",
-    //             status: "error",
-    //             duration: 1500,
-    //             isClosable: true,
-    //         })
-    //     }
+     useEffect(async () => {
+         if (parseInt(dinheiro) >= parseInt(preco)) {
+            //  await API.buyItens(comprar, preco);
+            //  await API.listPurchases().then(setCompras);
+            console.log("tem dinheiro")
+         } else if (parseInt(preco) > parseInt(dinheiro)) {
+             toast({
+                 title: "Sem dinheiro.",
+                 description: "Você não tem dinheiro suficiente para comprar esse produto, realize mais atividades para ganhar mais prêmios.",
+                 status: "error",
+                 duration: 1500,
+                 isClosable: true,
+             })
+         }
 
-    // }, [comprar]);
+     }, [comprar]);
 
     return (
         <>
             {compras.map(itens => {
                 //TODO: ARRUMAR O BOUGHT (itens comprados)
-                //    console.log(bought[0])
+                //FIXME: voltar o bought?
+                //FIXME: com mais itens no "comprar", o loop aumenta
+                    console.log(bought[`${itens.id}`])
                 return (
                     <div key={itens.id}>
                         <Box w="auto" border="1px solid black">
@@ -66,7 +70,7 @@ export default function ListarCompras({ money }) {
                         </Box>
                         <Square w="auto" border="1px solid black" p="5px">
                             {
-                                itens[`${itens.id}`] == false ?
+                                bought[`${itens.id}`] == false ?
                                     <Button colorScheme="blue"
                                         onClick={(e) => {
                                             setPreco(itens.preco)
