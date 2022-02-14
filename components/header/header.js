@@ -24,14 +24,14 @@ export default function Header({ inicio, missoes, loja, config }) {
     ]
 
     const routesMobile = [
-        { path: "/inicio", label: "Inicio"},
-        { path: "/missoes", label: "Missões"},
-        { path: "/loja", label: "Loja"},
-        { path: "/configurar", label: "Configurações"},
-        { path: "/perfil", label: "Perfil"}
+        { path: "/inicio", label: "Inicio" },
+        { path: "/missoes", label: "Missões" },
+        { path: "/loja", label: "Loja" },
+        { path: "/configurar", label: "Configurações" },
+        { path: "/perfil", label: "Perfil" }
     ]
 
-    function toggleMenu(){
+    function toggleMenu() {
         setNav(!nav);
     }
 
@@ -44,7 +44,7 @@ export default function Header({ inicio, missoes, loja, config }) {
                             <Link href={path} passHref>
                                 <Button colorScheme="teal" variant="link">
                                     {color ?
-                                        <Image size="64px" src={img} className={styles.imgSelect} alt={alt}/> : <Image size="64px" src={img} alt={alt}/>}
+                                        <Image size="64px" src={img} className={styles.imgSelect} alt={alt} /> : <Image size="64px" src={img} alt={alt} />}
                                     {color ? <a className={styles.imgSelect}><div className="label_header">{label}</div></a> : <a><div className="label_header">{label}</div></a>}
                                 </Button>
                             </Link>
@@ -56,29 +56,29 @@ export default function Header({ inicio, missoes, loja, config }) {
 
             <header className={styles.headerMobile}>
                 <Link href="/inicio" passHref>
-                <Image src="user/user_img/polar.webp" h="40px" alt="icone de urso polar" />
+                    <Image src="user/user_img/polar.webp" h="40px" alt="icone de urso polar" />
                 </Link>
                 <nav className="nav">
                     <Button className="btn_mobile" onClick={toggleMenu}>
-                        {nav ? 
-                        <Image src="icons/uteis/teste2.webp" h="20px" alt="menu" /> 
-                        : 
-                        <Image src="icons/uteis/teste2.webp" h="20px" alt="menu"/> 
+                        {nav ?
+                            <Image src="icons/uteis/teste2.webp" h="20px" alt="menu" />
+                            :
+                            <Image src="icons/uteis/teste2.webp" h="20px" alt="menu" />
                         }
                     </Button>
-                    {nav ? 
-                    <ul className={styles.wrapperMobile}>
-                        {routesMobile.map(({ path, label,}, idx) => (
-                            <li key={idx}>
-                                <Link href={path} passHref>
-                                    <Button colorScheme="teal" variant="link">
-                                      <Text color="black" fontWeight="normal">{label}</Text>
-                                    </Button>
+                    {nav ?
+                        <ul className={styles.wrapperMobile}>
+                            {routesMobile.map(({ path, label, }, idx) => (
+                                <Link href={path} passHref key={idx}>
+                                    <li>
+                                        <Button colorScheme="teal" variant="link">
+                                            <Text color="black" fontWeight="normal">{label}</Text>
+                                        </Button>
+                                    </li>
                                 </Link>
-                            </li>
-                        ))}
-                    </ul>
-                    : null}
+                            ))}
+                        </ul>
+                        : null}
                 </nav>
 
             </header>

@@ -12,26 +12,26 @@ function Missoes() {
 
 
     useEffect(() => {
-        async function fetchData(){
+        async function fetchData() {
             await API.getMissionsComplete().then(setCompletos);
             await API.getMissions().then(setMissoes);
         }
         fetchData();
-        
+
     }, []);
 
-  
 
-     useEffect(() => {
-         async function complete(){
-            
-         //FIXME: tentar arrumar a att de estado
-         await API.completeMission(completar);
-         await API.getMissionsComplete().then(setCompletos);
-         await API.getMissions().then(setMissoes);
+
+    useEffect(() => {
+        async function complete() {
+
+            //FIXME: tentar arrumar a att de estado
+            await API.completeMission(completar);
+            await API.getMissionsComplete().then(setCompletos);
+            await API.getMissions().then(setMissoes);
         }
         complete();
-     }, [completar])
+    }, [completar])
 
     return (
         <div className={styles.container}>
@@ -46,23 +46,21 @@ function Missoes() {
                 {missoes.map(task => {
                     return (
                         <div key={task.id}>
-                            <Flex color="white">
-                                {completos[0][`${task.id}`] == 0 ?
-                                    <>
-                                        <Center w="30%" borderBottom="1px solid black">
-                                            <Image src={`../images/missoes/${task.img}.webp`} alt={`${task.texto}`} h="100px" w="auto" />
-                                        </Center>
-                                        <Square w="20%" p="5px" borderBottom="1px solid black">
-                                            <Button colorScheme={colorMode === "light" ? "teal" : "blue"} onClick={(e) => setCompletar(task.id)} color={colorMode === "light" ? "#fff !important" : "#000 !important"}>Completar</Button>
-                                        </Square>
-                                        <Center w="50%" borderBottom="1px solid black">
-                                            <Text color={colorMode === "light" ? "#000000 !important" : "#fff !important"}>{task.texto}</Text>
-                                        </Center>
-                                    </>
-                                    :
-                                    <></>
-                                }
-                            </Flex>
+                            {completos[0][`${task.id}`] == 0 ?
+                                <Flex color="white">
+                                    <Center w="30%" borderBottom="1px solid black">
+                                        <Image src={`../images/missoes/${task.img}.webp`} alt={`${task.texto}`} h="100px" w="auto" />
+                                    </Center>
+                                    <Square w="20%" p="5px" borderBottom="1px solid black">
+                                        <Button colorScheme={colorMode === "light" ? "teal" : "blue"} onClick={(e) => setCompletar(task.id)} color={colorMode === "light" ? "#fff !important" : "#000 !important"}>Completar</Button>
+                                    </Square>
+                                    <Center w="50%" borderBottom="1px solid black">
+                                        <Text color={colorMode === "light" ? "#000000 !important" : "#fff !important"}>{task.texto}</Text>
+                                    </Center>
+                                </Flex>
+                                :
+                                <></>
+                            }
                         </div>
                     )
                 })}
@@ -81,14 +79,28 @@ function Missoes() {
                             <Flex color="white">
                                 {completos[0][`${task.id}`] == 1 ?
                                     <>
-                                        <Center w="30%" borderBottom="1px solid black">
+                                        <Center w="40%" borderBottom="1px solid black">
                                             <Image src={`../images/missoes/${task.img}.webp`} alt={`${task.texto}`} h="100px" w="auto" />
                                         </Center>
-                                        <Square w="20%" p="5px" borderBottom="1px solid black">
+                                        <Square
+                                            w="auto"
+                                            p="5px"
+                                            borderBottom="1px solid black"
+                                            textAlign="center"
+                                        >
                                             <Image src="../icons/uteis/checked.webp" h="64px" />
                                         </Square>
-                                        <Center w="50%" borderBottom="1px solid black">
-                                            <Text color={colorMode === "light" ? "#000000 !important" : "#fff !important"}>{task.texto}</Text>
+                                        <Center
+                                            w="60%"
+                                            borderBottom="1px solid black"
+                                            textAlign="center"
+                                            p="5px"
+                                        >
+                                            <Text
+                                                color={colorMode === "light" ? "#000000 !important" : "#fff !important"}
+                                            >
+                                                {task.texto}
+                                            </Text>
                                         </Center>
                                     </>
                                     :
