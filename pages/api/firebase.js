@@ -216,6 +216,7 @@ export default {
         const auth = await getAuth();
         const id = auth.currentUser.uid;
         const res = [];
+        const response = 0;
 
         const refMoney = collection(db, "userRef");
         const queryMoney = query(refMoney, where("id", "==", id));
@@ -223,8 +224,10 @@ export default {
         qMoney.forEach((doc) => {
             res.push(doc.data().dinheiro);
         });
-        
-        return res;
+        res.map(({dinheiro}) => {
+            response = dinheiro;
+        } )
+        return response;
     },
     setBuy: async () => {
         const auth = await getAuth();
@@ -243,7 +246,8 @@ export default {
         
         return response;
     },
-    buyItens: async () => {
+    buyItens: async (id, price) => {
+        console.log("tem dinheiro")
 
     },
 }

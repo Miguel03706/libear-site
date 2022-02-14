@@ -18,7 +18,6 @@ export default function Vendas() {
                 p="5%"
                 h="auto"
                 autoRows
-                templateColumns="repeat(4, 1fr)"
                 gap={4}
             >
                 <ListarCompras money={handleMoney} />

@@ -1,3 +1,16 @@
-.space{
+.space {
     margin-bottom: 150px;
+}
+.List {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
+    margin-bottom: 60px;
+
+}
+
+@media only screen and (max-width: 500px) {
+    .List {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
