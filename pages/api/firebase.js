@@ -1,5 +1,4 @@
 import firebase from "firebase/app";
-import { env } from 'process';
 import { initializeApp } from "firebase/app";
 import {
     getAuth,
@@ -25,7 +24,7 @@ import {
 import { Missoes, Compras, Progresso } from "../../lib/user";
 
 const firebaseConfig = {
-    apiKey: `${process.env.REACT_APP_FIREBASE_KEY}`,
+    apiKey: `${process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_KEY}`,
     authDomain: "libear-85621.firebaseapp.com",
     databaseURL: "https://libear-85621-default-rtdb.firebaseio.com",
     projectId: "libear-85621",
