@@ -25,13 +25,13 @@ import { Missoes, Compras, Progresso } from "../../lib/user";
 
 const firebaseConfig = {
     apiKey: `${process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_KEY}`,
-    authDomain: "libear-85621.firebaseapp.com",
-    databaseURL: "https://libear-85621-default-rtdb.firebaseio.com",
-    projectId: "libear-85621",
-    storageBucket: "libear-85621.appspot.com",
-    messagingSenderId: "877452629797",
-    appId: "1:877452629797:web:547f4ed6539598ab586ccc",
-    measurementId: "G-SG7V7ZDZVB"
+    authDomain: `${process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_AUTHDOMAIN}`,
+    databaseURL: `${process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_DATABASE_URL}`,
+    projectId: `${process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_PROJECTID}`,
+    storageBucket: `${process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_STORAGEBUCKET}`,
+    messagingSenderId: `${process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_MASSEAGINGSENDERID}`,
+    appId: `${process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_APPID}`,
+    measurementId: `${process.env.NEXT_PUBLIC_REACT_APP_FIREBASE_MEASUREMENTID}`,
 };
 
 // Initialize Firebase
