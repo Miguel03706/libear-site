@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+import { env } from 'process';
 import { initializeApp } from "firebase/app";
 import {
     getAuth,
