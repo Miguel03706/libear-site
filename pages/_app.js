@@ -5,15 +5,16 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-      <ChakraProvider>
-        <ColorModeScript initialColorMode="light" />
-      
-        <CSSReset />
-        <Component {...pageProps} />
-  
-        <Footer />
-      </ChakraProvider>
+    <ChakraProvider>
+      <ColorModeScript initialColorMode="light" />
+
+      <CSSReset />
+      <Component {...pageProps} />
+
+      <Footer />
+    </ChakraProvider>
   )
 }
+
 
 export default MyApp

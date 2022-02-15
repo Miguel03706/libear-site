@@ -23,12 +23,8 @@ import {
 } from "firebase/firestore";
 import { Missoes, Compras, Progresso } from "../../lib/user";
 
-// export default function handler(req, res) {
-//   res.status(200).json({ name: 'John Doe' })
-// }
-
 const firebaseConfig = {
-    apiKey: "AIzaSyBkvx5bs1Y3wL-cXtjQNuYHYZGeK6HCoxo",
+    apiKey: `${process.env.REACT_APP_FIREBASE_KEY}`,
     authDomain: "libear-85621.firebaseapp.com",
     databaseURL: "https://libear-85621-default-rtdb.firebaseio.com",
     projectId: "libear-85621",
@@ -251,3 +247,6 @@ export default {
 
     },
 }
+
+
+
