@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import API from "./api/firebase";
+import MONGO from "./api/mongoDB"
 import styles from "../styles/pages/entrar.module.scss";
 
 export default function Entrar() {
-
     const [loading, setLoading] = useState(false);
 
     const formik = useFormik({
@@ -34,8 +34,20 @@ export default function Entrar() {
         setLoading(false);
     }
 
+    async function testarAPI() {
+        console.log("teste")
+    }
+
     return (
         <div className={styles.Container}>
+            <div>
+                <Button
+                    colorScheme="teal"
+                    onClick={testarAPI}
+                >
+                    Entrar
+                </Button>
+            </div>
             <Center> <Image src={`icons/logo_urso_sorrindo.webp`} alt="icone de urso polar sorrindo" /> </Center>
             <Center> <h1>Entrar</h1></Center>
 
