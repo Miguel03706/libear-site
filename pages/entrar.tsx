@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { Center, Image, Button, Input } from "@chakra-ui/react";
+import { Center, Image, Button, Input, useToast } from "@chakra-ui/react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import API from "./api/firebase";
-import MONGO from "./api/mongoDB"
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 import styles from "../styles/pages/entrar.module.scss";
 
 export default function Entrar() {
     const [loading, setLoading] = useState(false);
+    const router = useRouter();
+    const toast = useToast();
 
     const formik = useFormik({
         initialValues: {
@@ -20,38 +22,70 @@ export default function Entrar() {
                 .required("Você precisa digitar um email")
                 .email("Preencha com um email válido"),
             password: yup.string()
-                .required("você precisa digitar uma senha")
+                .required("Você precisa digitar uma senha")
                 .min(6, "A senha deve conter no mínimo 6 caracteres")
         }),
         validateOnChange: false,
-        validateOnBlur: false
-    })
+        validateOnBlur: false,
+        // Aqui está a solução do erro do TypeScript:
+        onSubmit: async (values) => {
+            setLoading(true);
+
+            // Note que agora pegamos do "values" direto do Formik
+            const result = await signIn("credentials", {
+                redirect: false,
+                email: values.email,
+                password: values.password
+            });
+
+            setLoading(false);
+
+            if (result?.error) {
+                toast({
+                    title: "Erro ao entrar",
+                    description: result.error,
+                    status: "error",
+                    duration: 3000,
+                    isClosable: true,
+                });
+            } else {
+                router.push("/dashboard");
+            }
+        }
+    });
 
     async function validarDados() {
         setLoading(true);
-        let { email, password } = formik.values;
-        await API.loginUser(email, password);
-        setLoading(false);
-    }
+        const { email, password } = formik.values;
 
-    async function testarAPI() {
-        console.log("teste")
+        const result = await signIn("credentials", {
+            redirect: false,
+            email,
+            password
+        });
+
+        setLoading(false);
+
+        if (result?.error) {
+            toast({
+                title: "Erro ao entrar",
+                description: result.error,
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
+        } else {
+            // Mude "/dashboard" para a página que o usuário deve ir após o login
+            router.push("/dashboard");
+        }
     }
 
     return (
         <div className={styles.Container}>
-            <div>
-                <Button
-                    colorScheme="teal"
-                    onClick={testarAPI}
-                >
-                    Entrar
-                </Button>
-            </div>
-            <Center> <Image src={`icons/logo_urso_sorrindo.webp`} alt="icone de urso polar sorrindo" /> </Center>
+            <Center> <Image src={"icons/logo_urso_sorrindo.webp"} alt="icone de urso polar sorrindo" /> </Center>
             <Center> <h1>Entrar</h1></Center>
 
-            <form className={styles.Form}>
+            <form className={styles.Form} onSubmit={formik.handleSubmit}>
                 <Center marginTop="30px">
                     <Input
                         variant="flushed"
@@ -74,7 +108,7 @@ export default function Entrar() {
                 <Center marginTop="20px">
                     <Button
                         colorScheme="teal"
-                        onClick={validarDados}
+                        type="submit"
                         disabled={loading ? true : false}>
                         Entrar
                     </Button>

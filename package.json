@@ -11,10 +11,13 @@
     "@chakra-ui/react": "^1.7.3",
     "@emotion/react": "11",
     "@emotion/styled": "11",
+    "bcryptjs": "^3.0.3",
     "firebase": "^9.6.4",
     "formik": "^2.2.9",
     "framer-motion": "4",
-    "next": "12.0.7",
+    "mongodb": "^7.5.0",
+    "next": "^12.3.4",
+    "next-auth": "^4.24.14",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
@@ -22,7 +25,11 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^3.0.0",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
     "eslint": "8.4.1",
-    "eslint-config-next": "12.0.7"
+    "eslint-config-next": "12.0.7",
+    "typescript": "4.9.5"
   }
 }

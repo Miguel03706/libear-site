@@ -222,7 +222,7 @@ export default {
     const auth = await getAuth();
     const id = auth.currentUser.uid;
     const res = [];
-    const response = 0;
+    let response = 0;
 
     const refMoney = collection(db, "userRef");
     const queryMoney = query(refMoney, where("id", "==", id));
